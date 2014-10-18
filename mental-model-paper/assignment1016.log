@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.9.22)  17 OCT 2014 19:40
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.9.22)  18 OCT 2014 23:52
 entering extended mode
 **assignment1016.tex
 (C:\Users\Joaco\Desktop\CMSI370\CMSI370\mental-model-paper\assignment1016.tex
@@ -295,48 +295,90 @@ Missing character: There is no Ä in font cmr9!
 Missing character: There is no ô in font cmr9!
 Missing character: There is no ‚ in font cmr9!
 Missing character: There is no Ä in font cmr9!
-Missing character: There is no ú in font cmr9!
-Missing character: There is no ‚ in font cmr9!
-Missing character: There is no Ä in font cmr9!
-Missing character: There is no ú in font cmr9!
-Missing character: There is no ‚ in font cmr9!
-Missing character: There is no Ä in font cmr9!
-Missing character: There is no ô in font cmr9!
-Missing character: There is no ‚ in font cmr9!
-Missing character: There is no Ä in font cmr9!
 Missing character: There is no ô in font cmr9!
 Missing character: There is no ‚ in font cmr9!
 Missing character: There is no Ä in font cmr9!
 Missing character: There is no ò in font cmr9!
 Missing character: There is no ‚ in font cmr9!
 Missing character: There is no Ä in font cmr9!
-Missing character: There is no ô in font cmr9!
+Missing character: There is no ù in font cmr9!
+Missing character: There is no ‚ in font cmr9!
+Missing character: There is no Ä in font cmr9!
+Missing character: There is no ú in font cmr9!
+Missing character: There is no ‚ in font cmr9!
+Missing character: There is no Ä in font cmr9!
+Missing character: There is no ù in font cmr9!
+ <eras_modern_computing.png, id=16, 593.96906pt x 240.14719pt>
+File: eras_modern_computing.png Graphic file (type png)
+
+<use eras_modern_computing.png>
+Package pdftex.def Info: eras_modern_computing.png used on input line 62.
+(pdftex.def)             Requested size: 356.38419pt x 144.0894pt.
  [3]
 Missing character: There is no ‚ in font cmr9!
 Missing character: There is no Ä in font cmr9!
 Missing character: There is no ô in font cmr9!
- [4]
+Missing character: There is no ‚ in font cmr9!
+Missing character: There is no Ä in font cmr9!
+Missing character: There is no ô in font cmr9!
+Missing character: There is no ‚ in font cmr9!
+Missing character: There is no Ä in font cmr9!
+Missing character: There is no ú in font cmr9!
+Missing character: There is no ‚ in font cmr9!
+Missing character: There is no Ä in font cmr9!
+Missing character: There is no ù in font cmr9!
+Missing character: There is no ‚ in font cmr9!
+Missing character: There is no Ä in font cmr9!
+Missing character: There is no ô in font cmr9!
+ [4 <C:/Users/Joaco/Desktop/CMSI370/CMSI370/mental-model-paper/eras_modern_comp
+uting.png>]
 
-LaTeX Warning: Citation `krumm' on page 5 undefined on input line 126.
+LaTeX Warning: Citation `jain' on page 5 undefined on input line 84.
 
-(C:\Users\Joaco\Desktop\CMSI370\CMSI370\mental-model-paper\assignment1016.bbl)
+Missing character: There is no ‚ in font cmr9!
+Missing character: There is no Ä in font cmr9!
+Missing character: There is no ò in font cmr9!
+Missing character: There is no ‚ in font cmr9!
+Missing character: There is no Ä in font cmr9!
+Missing character: There is no ô in font cmr9!
+Missing character: There is no ‚ in font cmr9!
+Missing character: There is no Ä in font cmr9!
+Missing character: There is no ô in font cmr9!
+Missing character: There is no ‚ in font cmr9!
+Missing character: There is no Ä in font cmr9!
+Missing character: There is no ú in font cmr9!
+Missing character: There is no ‚ in font cmr9!
+Missing character: There is no Ä in font cmr9!
+Missing character: There is no ù in font cmr9!
 [5]
+
+LaTeX Warning: Citation `linn' on page 6 undefined on input line 102.
+
+Missing character: There is no ‚ in font cmr9!
+Missing character: There is no Ä in font cmr9!
+Missing character: There is no ù in font cmr9!
+[6]
+
+LaTeX Warning: Citation `flechais' on page 7 undefined on input line 117.
+
+(C:\Users\Joaco\Desktop\CMSI370\CMSI370\mental-model-paper\assignment1016.bbl
+
+LaTeX Warning: Empty `thebibliography' environment on input line 3.
+
+) [7]
 (C:\Users\Joaco\Desktop\CMSI370\CMSI370\mental-model-paper\assignment1016.aux)
 
 LaTeX Warning: There were undefined references.
 
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
  ) 
 Here is how much of TeX's memory you used:
- 2339 strings out of 493921
- 33894 string characters out of 3146480
- 100709 words of memory out of 3000000
- 5610 multiletter control sequences out of 15000+200000
- 9012 words of font info for 32 fonts, out of 3000000 for 9000
+ 2345 strings out of 493921
+ 34038 string characters out of 3146480
+ 104733 words of memory out of 3000000
+ 5615 multiletter control sequences out of 15000+200000
+ 8667 words of font info for 31 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 42i,6n,23p,720b,177s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 42i,6n,23p,900b,177s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files (x86)/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/
 Program Files (x86)/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx9.pfb><C:/Program
  Files (x86)/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files 
@@ -344,11 +386,10 @@ Program Files (x86)/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx9.pfb><C:/Program
 iKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program Files (x86)/MiKTeX/f
 onts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files (x86)/MiKTeX/fonts/typ
 e1/public/amsfonts/cm/cmr9.pfb><C:/Program Files (x86)/MiKTeX/fonts/type1/publi
-c/amsfonts/cm/cmti9.pfb><C:/Program Files (x86)/MiKTeX/fonts/type1/public/amsfo
-nts/cm/cmtt9.pfb>
-Output written on assignment1016.pdf (5 pages, 121674 bytes).
+c/amsfonts/cm/cmtt9.pfb>
+Output written on assignment1016.pdf (7 pages, 152282 bytes).
 PDF statistics:
- 54 PDF objects out of 1000 (max. 8388607)
+ 61 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 6 words of extra memory for PDF output out of 10000 (max. 10000000)
 
