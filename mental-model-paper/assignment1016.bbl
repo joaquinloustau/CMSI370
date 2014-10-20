@@ -1,3 +1,73 @@
-\begin{thebibliography}{}
+\begin{thebibliography}{10}
+
+\bibitem{adams1999users}
+Anne Adams and Martina~Angela Sasse.
+\newblock Users are not the enemy.
+\newblock {\em Communications of the ACM}, 42(12):40--46, 1999.
+
+\bibitem{amoroso1994fundamentals}
+EJ~Amoroso.
+\newblock Fundamentals of computer security.
+\newblock {\em PTR Prentice Hall. Englewood Cliffs, NJ}, 1994.
+
+\bibitem{bardram2005trouble}
+Eyvind Bardram.
+\newblock The trouble with login: on usability and computer security in
+  ubiquitous computing.
+\newblock {\em Personal and Ubiquitous Computing}, 9(6):357--367, 2005.
+
+\bibitem{dealvare1988framework}
+Anne~M. De~Alvare and Eugene~E. Schultz.
+\newblock {\em A framework for Password Selection}, 1988.
+
+\bibitem{flechais2003bringing}
+Ivan Flechais, M~Angela Sasse, and Stephen Hailes.
+\newblock Bringing security home: a process for developing secure and usable
+  systems.
+\newblock In {\em Proceedings of the 2003 workshop on New security paradigms},
+  pages 49--57. ACM, 2003.
+
+\bibitem{gold2007plenitude}
+Rich Gold.
+\newblock {\em The plenitude: Creativity, innovation, and making stuff}.
+\newblock MIT Press, 2007.
+
+\bibitem{biometrics2003biometrics}
+Biometrics~Working Group.
+\newblock {\em Biometric Security Concerns}, 2003.
+
+\bibitem{iso1998international}
+International Organization for Standardization.
+\newblock {\em International Standard ISO 9241-11}, 1998.
+
+\bibitem{itu2014world}
+International Telecommunication Union.
+\newblock {\em The World in 2014: ICT Facts and Figures}, 2014.
+
+\bibitem{jain2000biometric}
+Anil Jain, Lin Hong, and Sharath Pankanti.
+\newblock Biometric identification.
+\newblock {\em Communications of the ACM}, 43(2):90--98, 2000.
+
+\bibitem{linn1993privacy}
+John Linn.
+\newblock {\em Privacy enhancement for internet electronic mail: Part I:
+  message encryption and authentication procedures}, 1993.
+
+\bibitem{norman1981trouble}
+Donald~A Norman.
+\newblock The trouble with unix.
+\newblock {\em Datamation}, 27(12):139, 1981.
+
+\bibitem{weiser1991computer}
+Mark Weiser.
+\newblock The computer for the 21st century.
+\newblock {\em Scientific american}, 265(3):94--104, 1991.
+
+\bibitem{zurko1996user}
+Mary~Ellen Zurko and Richard~T Simon.
+\newblock User-centered security.
+\newblock In {\em Proceedings of the 1996 workshop on New security paradigms},
+  pages 27--33. ACM, 1996.
 
 \end{thebibliography}
