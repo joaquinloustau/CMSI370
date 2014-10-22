@@ -49,20 +49,49 @@ Anil Jain, Lin Hong, and Sharath Pankanti.
 \newblock Biometric identification.
 \newblock {\em Communications of the ACM}, 43(2):90--98, 2000.
 
+\bibitem{kainda2010security}
+Ronald Kainda, Ivan Flechais, and AW~Roscoe.
+\newblock Security and usability: Analysis and evaluation.
+\newblock In {\em Availability, Reliability, and Security, 2010. ARES'10
+  International Conference on}, pages 275--282. IEEE, 2010.
+
 \bibitem{linn1993privacy}
 John Linn.
 \newblock {\em Privacy enhancement for internet electronic mail: Part I:
   message encryption and authentication procedures}, 1993.
+
+\bibitem{nielsenusability2012}
+Jakob Nielsen.
+\newblock Usability 101: Introduction to usaability, January 2012.
+\newblock Online; posted 4-January-2012.
 
 \bibitem{norman1981trouble}
 Donald~A Norman.
 \newblock The trouble with unix.
 \newblock {\em Datamation}, 27(12):139, 1981.
 
+\bibitem{petersen2002usability}
+Marianne~Graves Petersen, Kim~Halskov Madsen, and Arne Kj{\ae}r.
+\newblock The usability of everyday technology: emerging and fading
+  opportunities.
+\newblock {\em ACM Transactions on Computer-Human Interaction (TOCHI)},
+  9(2):74--105, 2002.
+
+\bibitem{schultz2001usability}
+E~Eugene Schultz, Robert~W Proctor, Mei-Ching Lien, and Gavriel Salvendy.
+\newblock Usability and security an appraisal of usability issues in
+  information security methods.
+\newblock {\em Computers \& Security}, 20(7):620--634, 2001.
+
 \bibitem{weiser1991computer}
 Mark Weiser.
 \newblock The computer for the 21st century.
 \newblock {\em Scientific american}, 265(3):94--104, 1991.
+
+\bibitem{yee2004aligning}
+Ka-Ping Yee.
+\newblock Aligning security and usability.
+\newblock {\em IEEE Security \& Privacy}, 2(5):48--55, 2004.
 
 \bibitem{zurko1996user}
 Mary~Ellen Zurko and Richard~T Simon.
