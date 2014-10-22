@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.9.22)  22 OCT 2014 06:48
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.9.22)  22 OCT 2014 07:50
 entering extended mode
 **assignment1016.tex
 (C:\Users\Joaco\Desktop\CMSI370\CMSI370\mental-model-paper\assignment1016.tex
@@ -289,27 +289,14 @@ Missing character: There is no ù in font cmr9!
 Missing character: There is no ‚ in font cmr9!
 Missing character: There is no Ä in font cmr9!
 Missing character: There is no ô in font cmr9!
-Missing character: There is no ‚ in font cmr9!
-Missing character: There is no Ä in font cmr9!
-Missing character: There is no ô in font cmr9!
  <eras_modern_computing.png, id=14, 593.96906pt x 240.14719pt>
 File: eras_modern_computing.png Graphic file (type png)
 
 <use eras_modern_computing.png>
 Package pdftex.def Info: eras_modern_computing.png used on input line 63.
 (pdftex.def)             Requested size: 415.7755pt x 168.10187pt.
-Missing character: There is no ‚ in font cmr9!
-Missing character: There is no Ä in font cmr9!
-Missing character: There is no ô in font cmr9!
-Missing character: There is no ‚ in font cmr9!
-Missing character: There is no Ä in font cmr9!
-Missing character: There is no ô in font cmr9!
- [3]
-Missing character: There is no ‚ in font cmr9!
-Missing character: There is no Ä in font cmr9!
-Missing character: There is no ô in font cmr9!
- [4 <C:/Users/Joaco/Desktop/CMSI370/CMSI370/mental-model-paper/eras_modern_comp
-uting.png>] [5]
+ [3] [4 <C:/Users/Joaco/Desktop/CMSI370/CMSI370/mental-model-paper/eras_modern_
+computing.png>] [5]
 <northwestern_password_requirements.png, id=26, 309.40594pt x 645.16031pt>
 File: northwestern_password_requirements.png Graphic file (type png)
 
@@ -317,12 +304,6 @@ File: northwestern_password_requirements.png Graphic file (type png)
 Package pdftex.def Info: northwestern_password_requirements.png used on input l
 ine 116.
 (pdftex.def)             Requested size: 247.52509pt x 516.12894pt.
-Missing character: There is no ‚ in font cmr9!
-Missing character: There is no Ä in font cmr9!
-Missing character: There is no ô in font cmr9!
-Missing character: There is no ‚ in font cmr9!
-Missing character: There is no Ä in font cmr9!
-Missing character: There is no ô in font cmr9!
  [6] [7 <C:/Users/Joaco/Desktop/CMSI370/CMSI370/mental-model-paper/northwestern
 _password_requirements.png>]
 Missing character: There is no ‚ in font cmr9!
@@ -338,9 +319,9 @@ Overfull \hbox (1.186pt too wide) in paragraph at lines 173--175
 o-duced by Jakob E. Bardram[[]]
  []
 
-[9] [10]
-(C:\Users\Joaco\Desktop\CMSI370\CMSI370\mental-model-paper\assignment1016.bbl)
-[11]
+[9]
+(C:\Users\Joaco\Desktop\CMSI370\CMSI370\mental-model-paper\assignment1016.bbl
+[10]) [11]
 (C:\Users\Joaco\Desktop\CMSI370\CMSI370\mental-model-paper\assignment1016.aux) 
 ) 
 Here is how much of TeX's memory you used:
@@ -358,7 +339,7 @@ x86)/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files (x86)/Mi
 KTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program Files (x86)/MiKTeX/fo
 nts/type1/public/amsfonts/cm/cmr9.pfb><C:/Program Files (x86)/MiKTeX/fonts/type
 1/public/amsfonts/cm/cmti9.pfb>
-Output written on assignment1016.pdf (11 pages, 205731 bytes).
+Output written on assignment1016.pdf (11 pages, 205770 bytes).
 PDF statistics:
  70 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
