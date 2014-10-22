@@ -31,7 +31,7 @@
 
 % Add an abstract.
 \abstract{
-Describe your paper in 100-200 words, give or take.  The command-line \texttt{wc} utility is really useful here!  This particular sample paper is meant to demonstrate a variety of \LaTeX\ directives for producing a well-structured, consistently-formatted scholarly document.  The actual content and outline may vary according to the needs of your specific research topic.
+The rise of ubiquitous computing ---anytime, everywhere accessible information and communications--- presents new unprecedented scenarios that mean that established usability engineering methodologies, particularly in terms of security measures, have become increasingly out of date. This paper proposes the idea of a new usability for security measures.T he paper suggests that new security usability must emerge from a fundamental reassessment of existing methods, theories and tools to arrive at an approach that is suitable to a dynamic environment characterized by a myriad of networked processing devices, distributed at all scales throughout life. 
 }
 
 % Add various lists on new pages.
@@ -57,6 +57,13 @@ This paper aims to examine the security issues for ubiquitous computing and anal
 The term ubiquitous computing was coined by Mark Weiser, chief technology officer at Xerox’s Palo Alto Research Center (PARC) in 1988 to describe a future in which computers, embedded in everyday objects, replace personal computers (PCs). In his ground-breaking article, ``The Computer for the 21st Century," Weiser expresses, ``the most profound technologies are those that disappear. They weave themselves into the fabric of everyday life until they are indistinguishable from it" \cite{weiser1991computer}.
 
 Presently, ubiquitous computing, or ubicomp, is the term given to the third era of modern computing. The first era was defined by the mainframe computer, a single large-time shared computer owned by an organization and used by several individuals at the same time. Second, came the era of the PC, a personal computer predominantly owned and used by one individual, and dedicated to them. Finally, the third and present era, ubiquitous computing, is characterized of small networked computer products, such as smart phones, tablets, and embedded computers built into many of the devices we own ---resulting in a world in which each person owns and uses hundreds of computers a day.
+
+\begin{figure}
+  \centering
+    \includegraphics[scale=0.7]{eras_modern_computing}
+     \caption{The three eras of modern computing \cite{weiser1991computer}.}
+\end{figure}
+
 
 Rich Gold, a member of Dr. Weiser’s team at PARC, proposed a taxonomy of properties for ubiquitous computing based on Weiser’s formulations. The properties were: sensuous, reactive, communicative, embedded socially and colonizing \cite{gold2007plenitude}. 
 
@@ -102,12 +109,12 @@ As it can be deduced from observing the previous steps, this approach is most su
 
 The number of devices that a user will interact with will require multiple usernames and passwords for the user to remember. Remembering usernames and passwords is difficult even for experienced computer users and typing them in, creates a breakdown in the interaction with the computer, forcing the user to focus on the device rather than on his or her task at hand.  De Alvare and Schultz\cite{dealvare1988framework} discovered that once a password is chosen, a user is unlikely to change it until he/she is aware that it has been compromised. Furthermore, to make memorization easier, users also tend to construct passwords that contain the least amount of characters as possible.
 
-Similarly, mechanisms and policies for increasing the password strength like frequent change of passwords or requesting a password of a certain length that includes different kinds of symbols (See figure), often has the opposite effect as users make easy-to-remember passwords and write them down, thereby lowering security \cite{adams1999users}. This shows how a highly secure system from a technical standpoint can be made insecure if the authentication is difficult or tedious to use. The result is that users find ways to circumvent and shortcut the security system, which leads to vulnerable systems. 
+Similarly, mechanisms and policies for increasing the password strength like frequent change of passwords or requesting a password of a certain length that includes different kinds of symbols (See figure 2 ), often has the opposite effect as users make easy-to-remember passwords and write them down, thereby lowering security \cite{adams1999users}. This shows how a highly secure system from a technical standpoint can be made insecure if the authentication is difficult or tedious to use. The result is that users find ways to circumvent and shortcut the security system, which leads to vulnerable systems. 
 
 \begin{figure}
   \centering
     \includegraphics[scale=0.8]{northwestern_password_requirements}
-     \caption{Excessive requirements for passwords at Northwester University.}
+     \caption{Excessive requirements for passwords at Northwester University \cite{norman2009way}.}
 \end{figure}
 
 This clearly correlates to one of the most important usability components: errors.  The log-in/password includes frequent types of expected errors, such as:
@@ -187,7 +194,13 @@ Needless to say, any security measure designed should also be consistent with us
 \section{Conclusions}
 As user-interface technology continues to evolve and users' needs continue to diversify at an unprecedented pace, no single technology or architecture is always ``user friendly." 
 
-The paradigm for designing security mechanisms in a ubicomp environment should be the full integration of security and usability concerns into the software development process, thus enabling developers to build secure systems that work in the real world \cite{flechais2003bringing}.
+The present status quo and prospects of a world in which every device has a computer embedded in it urge us to produce systems that are more secure, that enhance privacy, and that are still eminently usable. 
+
+The paradigm to achieve this should be the full integration of security and usability concerns into the software development process, thus enabling developers to build secure systems that work in the real world \cite{flechais2003bringing}.Despite what is commonly believed, security and usability may and in fact should be considered jointly, as they affect each other --- usability factors can cause users to behave insecurely, and security factors may obviously impair performance.
+
+After analyzing the security and usability of the most common common authentication method ---log-in/password--- and two alternatives to it usually offered, one set out to outline the requirements of new security measures in ubiquitous computing environments.
+
+These requirements take the form of three steps. Firstly, appropriate technologies, probably including automation, will need to be developed. Secondly, a design with the following characteristics must be constructed: allows for proximity-based user authentication, supports migrating user session within devices, allows multi-user sessions, enables flexible creation and deletion of users, and lastly follows a common standard designs with other ubiquitous devices. Finally, new security measures developers must seek to obtain continual communication from users to support the development of appropriate conceptual models.
 
 \bibliography{assignment1016}
 \bibliographystyle{plain}

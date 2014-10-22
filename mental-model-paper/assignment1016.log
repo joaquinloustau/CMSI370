@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.9.22)  22 OCT 2014 05:14
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.9.22)  22 OCT 2014 06:48
 entering extended mode
 **assignment1016.tex
 (C:\Users\Joaco\Desktop\CMSI370\CMSI370\mental-model-paper\assignment1016.tex
@@ -273,10 +273,6 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <8> on input line 30.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <6> on input line 30.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <9> on input line 34.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 34.
  [1
 
 {C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}]
@@ -296,6 +292,12 @@ Missing character: There is no ô in font cmr9!
 Missing character: There is no ‚ in font cmr9!
 Missing character: There is no Ä in font cmr9!
 Missing character: There is no ô in font cmr9!
+ <eras_modern_computing.png, id=14, 593.96906pt x 240.14719pt>
+File: eras_modern_computing.png Graphic file (type png)
+
+<use eras_modern_computing.png>
+Package pdftex.def Info: eras_modern_computing.png used on input line 63.
+(pdftex.def)             Requested size: 415.7755pt x 168.10187pt.
 Missing character: There is no ‚ in font cmr9!
 Missing character: There is no Ä in font cmr9!
 Missing character: There is no ô in font cmr9!
@@ -305,17 +307,15 @@ Missing character: There is no ô in font cmr9!
  [3]
 Missing character: There is no ‚ in font cmr9!
 Missing character: There is no Ä in font cmr9!
-Missing character: There is no ú in font cmr9!
-Missing character: There is no ‚ in font cmr9!
-Missing character: There is no Ä in font cmr9!
 Missing character: There is no ô in font cmr9!
- [4] [5]
+ [4 <C:/Users/Joaco/Desktop/CMSI370/CMSI370/mental-model-paper/eras_modern_comp
+uting.png>] [5]
 <northwestern_password_requirements.png, id=26, 309.40594pt x 645.16031pt>
 File: northwestern_password_requirements.png Graphic file (type png)
 
 <use northwestern_password_requirements.png>
 Package pdftex.def Info: northwestern_password_requirements.png used on input l
-ine 109.
+ine 116.
 (pdftex.def)             Requested size: 247.52509pt x 516.12894pt.
 Missing character: There is no ‚ in font cmr9!
 Missing character: There is no Ä in font cmr9!
@@ -332,31 +332,35 @@ Missing character: There is no ‚ in font cmr9!
 Missing character: There is no Ä in font cmr9!
 Missing character: There is no ù in font cmr9!
 
-[8] [9]
-(C:\Users\Joaco\Desktop\CMSI370\CMSI370\mental-model-paper\assignment1016.bbl
-[10]) [11]
+[8]
+Overfull \hbox (1.186pt too wide) in paragraph at lines 173--175
+\OT1/cmr/m/n/9 The term proximity-based user au-then-ti-ca-tion was first in-tr
+o-duced by Jakob E. Bardram[[]]
+ []
+
+[9] [10]
+(C:\Users\Joaco\Desktop\CMSI370\CMSI370\mental-model-paper\assignment1016.bbl)
+[11]
 (C:\Users\Joaco\Desktop\CMSI370\CMSI370\mental-model-paper\assignment1016.aux) 
 ) 
 Here is how much of TeX's memory you used:
- 2364 strings out of 493921
- 34487 string characters out of 3146480
- 101798 words of memory out of 3000000
+ 2362 strings out of 493921
+ 34561 string characters out of 3146480
+ 101802 words of memory out of 3000000
  5633 multiletter control sequences out of 15000+200000
- 9012 words of font info for 32 fonts, out of 3000000 for 9000
+ 8232 words of font info for 29 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 42i,6n,23p,986b,236s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 42i,6n,23p,986b,238s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files (x86)/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/P
 rogram Files (x86)/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx9.pfb><C:/Program 
 Files (x86)/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files (
 x86)/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files (x86)/Mi
 KTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program Files (x86)/MiKTeX/fo
-nts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files (x86)/MiKTeX/fonts/type
-1/public/amsfonts/cm/cmr9.pfb><C:/Program Files (x86)/MiKTeX/fonts/type1/public
-/amsfonts/cm/cmti9.pfb><C:/Program Files (x86)/MiKTeX/fonts/type1/public/amsfon
-ts/cm/cmtt9.pfb>
-Output written on assignment1016.pdf (11 pages, 185897 bytes).
+nts/type1/public/amsfonts/cm/cmr9.pfb><C:/Program Files (x86)/MiKTeX/fonts/type
+1/public/amsfonts/cm/cmti9.pfb>
+Output written on assignment1016.pdf (11 pages, 205731 bytes).
 PDF statistics:
- 75 PDF objects out of 1000 (max. 8388607)
+ 70 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 6 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 11 words of extra memory for PDF output out of 10000 (max. 10000000)
 
