@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8"/>
+		<title> JL RPG</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+	</head>
+	<body>
+	<section class="container">
+		<div class="row">
+			<div class="col-xs-12 col-md-8 col-md-offset-2">
+				<ul class="nav nav-tabs nav-justified">
+					<li><a href="rpg2.html">Home</a></li>
+					<li><a href="#loginModal" data-toggle="modal" data-target="#loginModal">Play</a></li>
+					<li><a href="characters.html">Characters</a></li>
+					<li><a href="#">Settings</a></li>
+					<li><a href="#">About</a></li>	
+				</ul>
+			</div>
+		</div>
+	</section>
+
+	<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-hidden="true">
+		<div class="container" style="margin-top:80px; margin-left:750px">
+			<div class="col-md-4">
+			    <div class="panel panel-default">
+				<div class="panel-heading"><h3 class="panel-title"><strong>Sign In </strong></h3></div> 
+			 	<div class="panel-body">
+			  		<form role="form">
+			  		<div class="form-group">
+				    <label for="exampleInputEmail1">Username or Email</label>
+				    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+			  		</div>
+				  	<div class="form-group">
+					    <label for="exampleInputPassword1">Password <a href="/sessions/forgot_password">(forgot password)</a></label>
+					    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+				  	</div>
+			  	    <div class="checkbox">
+                    <label>
+                        <input name="remember" type="checkbox" value="Remember Me">Remember Me
+                    </label>
+                    </div>
+	       			 <div class="form-group text-center">
+	       			 	<button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+	                    <input type="submit" class="btn btn-success btn-login-submit" value="Login" />
+                    </div>
+					</form>
+			  	</div>
+			  	<div class="panel-footer">Don't have an account! <a href="#" onClick=""> Sign Up Here </div>
+				</div>
+			</div>
+	  	</div>
+	</div>
+	<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+	</body>
+</html>
