@@ -1,4 +1,9 @@
 img.avatar {
-    height: 24px;
+    height: 25px;
 }
 
+.table-custom {
+   width: 50%;
+   margin-right: auto;
+   margin-left:auto;
+}
