@@ -79,3 +79,7 @@ var deleteCharacter = function(character) {
         });
     });
 }
+
+$('#create-character').click(function(){
+        $('#create').modal('show');
+});
