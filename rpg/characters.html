@@ -1,159 +1,173 @@
 <!doctype html>
 <html>
     <head>
-        <meta charset="UTF-8"/>
-        <title> JL RPG</title>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-        <link rel="stylesheet" href="characters.css">
+      <meta charset="UTF-8"/>
+      <title> JL RPG</title>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+      <link rel="stylesheet" href="characters.css">        
+      <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+      <script type="text/javascript" src="jquery.tablesorter.js"></script>
     </head>
+  
     <body>
     <section class="container">
-        <div class="row">
-            <div class="col-xs-12 col-md-8 col-md-offset-2">
-                <ul class="nav nav-tabs nav-justified">
-                    <li><a href="rpg2.html">Home</a></li>
-                    <li><a href="#loginModal" data-toggle="modal" data-target="#loginModal">Play</a></li>
-                    <li><a href="characters.html">Characters</a></li>
-                    <li><a href="#">Settings</a></li>
-                    <li><a href="#">About</a></li>  
-                </ul>
-            </div>
+      <div class="row">
+        <div class="col-xs-12 col-md-8 col-md-offset-2">
+          <ul class="nav nav-tabs nav-justified">
+              <li><a href="rpg2.html">Home</a></li>
+              <li><a href="#loginModal" data-toggle="modal" data-target="#loginModal">Play</a></li>
+              <li><a href="characters.html">Characters</a></li>
+              <li><a href="#">Settings</a></li>
+              <li><a href="#">About</a></li>  
+            </ul>
         </div>
+      </div>
     </section>
 
     <div class="span7 text-center"><h3>Character Roster</h3></div>
     <div class="span7 text-center">
-    <a href="#" class="btn btn-primary btn-xs"><b>+</b> Add new character</a></br></br>
+      <a href="#" id="create-character" class="btn btn-primary btn-xs"><b>+</b> Add new character</a></br></br>
     </div>
-    <table class="table-custom table-striped table-hover">
-        <thead>
-            <tr>
-                <th></th>
-                <th>Name</th>
-                <th>Gender</th>
-                <th>Class</th>
-                <th>Money</th>
-                <th>Level</th>
-                <th>Edit</th>
-                <th>Delete</th>
-            </tr>
-        </thead>
-        <tbody></tbody>
+    <div class="span7 text-center" id="searchBar">
+      <div class="input-group">
+        <input class="form-control" id="system-search" name="q" placeholder="Search for character or attribute" required>
+        <span class="input-group-btn">
+          <button type="submit" class="btn btn-default"><i class="glyphicon glyphicon-search"></i></button>
+        </span>
+      </div>
+    </div>
+    <table id="myTable" class="tablesorter-demo table-custom table-striped table-hover table-list-search">
+      <thead>
+        <tr>
+          <th></th>
+          <th>Name</th>
+          <th>Gender</th>
+          <th>Class</th>
+          <th>Money</th>
+          <th>Level</th>
+          <th>Edit</th>
+          <th>Delete</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
     </table>
 
     <div class="templates hidden">
-        <table>
-            <tbody>
-                <tr class="character-template">
-                    <td class="avatar"></td>
-                    <td class="name"><a href="#" id="username" data-type="text" data-pk="1" data-title="Enter username" class="editable editable-click" style="display: inline;"></a></td>
-                    <td class="gender"><a href="#" id="gender" data-type="select" data-pk="1" data-value="5" data-source="/groups" data-title="Select group" class="editable editable-click editable-open" style="display: none;">Admin</a></td>
-                    <td class="class"></td>
-                    <td class="money"></td>
-                    <td class="level"></td>
-                    <td class="edit"><p><button class="btn btn-primary btn-xs"><span class="glyphicon glyphicon-pencil"></span></button></p></td>
-                    <td class="delete"><p><button class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-trash"></span></button></p></td>
-                </tr>
-            </tbody>
-        </table>
+      <table class="table table-list-search display nowrap dataTable dtr-inline">
+        <tbody>
+          <tr class="character-template">
+            <td><img class="avatar" src=""></td>
+            <td class="name"><a href="#" id="username" data-type="text" data-pk="1" data-title="Enter username" class="editable editable-click" style="display: inline;"></a></td>
+            <td class="gender"><a href="#" id="gender" data-type="select" data-pk="1" data-value="5" data-source="/groups" data-title="Select group" class="editable editable-click editable-open" style="display: none;">Admin</a></td>
+            <td class="class"></td>
+            <td class="money"></td>
+            <td class="level"></td>
+            <td class="edit"><p><button class="btn btn-primary btn-xs"><span class="glyphicon glyphicon-pencil"></span></button></p></td>
+            <td class="delete"><p><button class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-trash"></span></button></p></td>
+          </tr>
+        </tbody>
+      </table>
     </div>
 
     <div class="modal fade" id="edit" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="container" style="margin-top:80px; margin-left:750px">
-            <div class="col-md-4">
-                <div class="panel panel-default">
-                <div class="panel-heading"><h3 class="panel-title"><strong>Edit Character</strong></h3></div> 
-                <div class="panel-body">
-                    <form role="form">
-                    <div class="form-group">
-                    <label for="name-edit">Name</label>
-                    <input type="text" class="form-control" id="name-edit" value="name">
-                    </div>
-                    <div class="form-group">
-                        <label for="class-edit">Class</label>
-                        <input type="text" class="form-control" id="class-edit" value="class">
-                    </div>
-                    <div class="checkbox">
-                    <label>
-                        <input name="remember" type="radio" id="female" value="female">Female
-                        <input name="remember" type="radio" id="male" value="male">Male
-                    </label>
-                    </div>
-                    <div class="form-group">
-                        <label for="money-edit">Money</label>
-                        <input type="number" class="form-control" id="money-edit" value="money">
-                    </div>
-                    <div class="form-group">
-                        <label for="level-edit">Level</label>
-                        <input type="number" class="form-control" id="level-edit" value="level">
-                    </div>
-                    </form>
+      <div class="container" style="margin-top:80px; margin-left:750px">
+        <div class="col-md-4">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <button type="button" id="close-edit" class="close pull-right" aria-hidden="true">×</button><h3 class="panel-title"><strong>Edit Character</strong></h3></div> 
+            <div class="panel-body">
+              <form role="form">
+                <div class="form-group">
+                  <label for="name-edit">Name</label>
+                  <input type="text" class="form-control" id="name-edit" value="name">
                 </div>
-                <div class="panel-footer">  
-                    <button type="button" id="update" class="btn btn-warning btn-lg" style="width: 100%;"><span class="glyphicon glyphicon-ok-sign"></span> Update</button></div>
+                <div class="form-group">
+                  <label for="class-edit">Class</label>
+                  <input type="text" class="form-control" id="class-edit" value="class">
                 </div>
+                <div class="checkbox">
+                  <label>
+                  <input name="remember" type="radio" id="female" value="female">Female
+                  <input name="remember" type="radio" id="male" value="male">Male
+                  </label>
+                </div>
+                <div class="form-group">
+                  <label for="money-edit">Money</label>
+                  <input type="number" class="form-control" id="money-edit" value="money">
+                </div>
+                <div class="form-group">
+                  <label for="level-edit">Level</label>
+                  <input type="number" class="form-control" id="level-edit" value="level">
+                </div>
+              </form>
             </div>
+            <div class="panel-footer">  
+              <button type="button" id="update" class="btn btn-warning btn-lg" style="width: 100%;"><span class="glyphicon glyphicon-ok-sign"></span> Update</button>
+            </div>
+          </div>
         </div>
+      </div>
     </div>
 
 
- <div class="modal fade" id="create" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="container" style="margin-top:80px; margin-left:750px">
-            <div class="col-md-4">
-                <div class="panel panel-default">
-                <div class="panel-heading"><h3 class="panel-title"><strong>Edit Character</strong></h3></div> 
-                <div class="panel-body">
-                    <form role="form">
-                    <div class="form-group">
-                    <label for="name-edit">Name</label>
-                    <input type="text" class="form-control" id="name-edit" placeholder="name">
-                    </div>
-                    <div class="form-group">
-                        <label for="class-edit">Class</label>
-                        <input type="text" class="form-control" id="class-edit" placeholder="class">
-                    </div>
-                    <div class="checkbox">
-                    <label>
-                        <input name="remember" type="radio" id="female" value="female">Female
-                        <input name="remember" type="radio" id="male" value="male">Male
-                    </label>
-                    </div>
-                    <div class="form-group">
-                        <label for="money-edit">Money</label>
-                        <input type="number" class="form-control" id="money-edit" placeholder="0">
-                    </div>
-                    <div class="form-group">
-                        <label for="level-edit">Level</label>
-                        <input type="number" class="form-control" id="level-edit" placeholder="0">
-                    </div>
-                    </form>
+    <div class="modal fade" id="create" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="container" style="margin-top:80px; margin-left:750px">
+        <div class="col-md-4">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <button type="button" id="close-create" class="close pull-right" aria-hidden="true">×</button><h3 class="panel-title"><strong>Create New Character</strong></h3>
+            </div> 
+            <div class="panel-body">
+              <form role="form">
+                <div class="form-group">
+                 <label for="name-create">Name</label>
+                 <input type="text" class="form-control" id="name-create" placeholder="name">
                 </div>
-                <div class="panel-footer">  
-                    <button type="button" id="update" class="btn btn-warning btn-lg" style="width: 100%;"><span class="glyphicon glyphicon-ok-sign"></span> Update</button></div>
+                <div class="form-group">
+                  <label for="class-create">Class</label>
+                    <input type="text" class="form-control" id="class-create" placeholder="class">
                 </div>
+                <div class="checkbox">
+                  <label>
+                    <input name="remember" type="radio" id="female" value="female" checked>Female
+                    <input name="remember" type="radio" id="male" value="male">Male
+                  </label>
+                </div>
+                <div class="form-group">
+                  <label for="money-create">Money</label>
+                  <input type="number" class="form-control" id="money-create" placeholder="0">
+                </div>
+                <div class="form-group">
+                  <label for="level-create">Level</label>
+                  <input type="number" class="form-control" id="level-create" placeholder="0">
+                </div>
+              </form>
             </div>
+            <div class="panel-footer">  
+              <button type="button" id="create-confirmed" class="btn btn-warning btn-lg" style="width: 100%;"><span class="glyphicon glyphicon-ok-sign"></span>Create</button></div>
+            </div>
+          </div>
         </div>
-    </div>
+      </div>
 
-    <div class="modal fade" id="delete" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal fade" id="delete" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="container" style="margin-top:80px; margin-left:750px">
-            <div class="col-md-4">
-                <div class="panel panel-default">
-                <div class="panel-heading"><h3 class="panel-title"><strong>Delete Character</strong></h3></div> 
-                <div class="panel-body">
-                    <div id="confirm-delete">Test</div>
-                    <div class="form-group text-center">
-                        <button type="button" class="btn btn-danger" data-dismiss="modal">No, Cancel</button>
-                        <button type="button" id="delete-confirmed" class="btn btn-success" data-dismiss="modal">Yes, Delete</button>
-                    </div>
+          <div class="col-md-4">
+            <div class="panel panel-default">
+              <div class="panel-heading"><h3 class="panel-title"><strong>Delete Character</strong></h3>
+              </div> 
+              <div class="panel-body">
+                <div id="confirm-delete">Test</div>
+               <div class="form-group text-center">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">No, Cancel</button>
+                <button type="button" id="delete-confirmed" class="btn btn-success" data-dismiss="modal">Yes, Delete</button>
                 </div>
-                </div>
+              </div>
             </div>
+          </div>
         </div>
     </div>
-    
-    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
     <script src="Characters.js"></script>
 </body>
 </html>
