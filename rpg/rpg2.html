@@ -4,6 +4,9 @@
 		<meta charset="UTF-8"/>
 		<title> JL RPG</title>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+		<link rel="stylesheet" href="rpg.css">
+		<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+		<script type="text/javascript" src="rpg2.js"></script>
 	</head>
 	<body>
 	<section class="container">
@@ -22,62 +25,62 @@
 
 	<div class="text-center"><h3>Characters of the week</h3></div>
 	<div class="row">
-		<div class="col-xs-12 col-md-2 col-md-offset-2">
+		<div class="col-xs-12 col-md-2 col-md-offset-3">
 			<div class="thumbnail">
-	      <img data-src="holder.js/300x300" alt="...">
+	      <img src="iggy.png" class="character-week" alt="iggy">
 	      <div class="caption">
-	        <h5>Thumbnail label</h5>
-	        <p>...</p>
-	        <p><a href="#" class="btn btn-default" role="button">More</a></p>
+	        <h4>Iggy</h4>
+	        <p>Although its origin is somewhat clouded, the Lion mascot has been synonymous with Loyola Marymount University for more than 70 years. According to the Oct. 5, 1923 edition of the school newspaper, the Los Angeles Loyolan, the Lion mascot was suggested by an enthusiastic fan after 1919 when St. Vincent's College became Loyola College. Noting the Loyola football player's fierce competitiveness, that unknown fan described the Loyola players as Lions. The name did not generate too much popularity and the Loyola athletic nickname remained "Loyolan's" until 1923. </p>
+	        <p><a href="http://www.lmulions.com/trads/mascot.html" class="btn btn-default" role="button">More</a></p>
 	      </div>
 	    </div>
 	  </div>
 	  <div class="col-xs-12 col-md-2">
 	    <div class="thumbnail">
-	      <img data-src="holder.js/300x300" alt="...">
+	      <img src="peterpan.jpg" class="character-week" alt="peter-pan">
 	      <div class="caption">
-	        <h5>Thumbnail label</h5>
-	        <p>...</p>
-	        <p><a href="#" class="btn btn-default" role="button">More</a></p>
+	        <h4>Peter Pan</h4>
+	        <p>Peter Pan is a character created by Scottish novelist and playwright J. M. Barrie. A mischievous boy who can fly and never grows up, Peter Pan spends his never-ending childhood adventuring on the small island of Neverland as the leader of his gang, the Lost Boys, interacting with mermaids, Native Americans, fairies, pirates, and occasionally ordinary children from the world outside of Neverland. In addition to two distinct works by Barrie, the character has been featured in a variety of media and merchandise, both adapting and expanding on Barrie's works.</p>
+	        <p><a href="http://en.wikipedia.org/wiki/Peter_Pan" class="btn btn-default" role="button">More</a></p>
 	      </div>
 	    </div>
 	  </div>  
 	  <div class="col-xs-12 col-md-2">
     <div class="thumbnail">
-      <img data-src="holder.js/300x300" alt="...">
+      <img src="alanturing.jpg" class="character-week" alt="alan-turing">
       <div class="caption">
-        <h5>Thumbnail label</h5>
-        <p>...</p>
-        <p> <a href="#" class="btn btn-default" role="button">More</a></p>
+        <h4>Alan Turing</h4>
+        <p>Alan Mathison Turing, (23 June 1912 – 7 June 1954) was a British mathematician, logician, cryptanalyst, philosopher, pioneering computer scientist, mathematical biologist, and marathon and ultra distance runner. He was highly influential in the development of computer science, providing a formalisation of the concepts of "algorithm" and "computation" with the Turing machine, which can be considered a model of a general purpose computer.Turing is widely considered to be the father of theoretical computer science and artificial intelligence.</p>
+        <p> <a href="http://en.wikipedia.org/wiki/Alan_Turing" class="btn btn-default" role="button">More</a></p>
       </div>
     </div>
   </div>
 </div>
 
 	<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-hidden="true">
-		<div class="container" style="margin-top:80px; margin-left:750px">
-			<div class="col-md-4">
+		<div class="container">
+			<div class="col-md-4 col-md-offset-4 modal-popup">
 			    <div class="panel panel-default">
 				<div class="panel-heading"><h3 class="panel-title"><strong>Sign In </strong></h3></div> 
 			 	<div class="panel-body">
 			  		<form role="form">
 			  		<div class="form-group">
 				    <label for="exampleInputEmail1">Username or Email</label>
-				    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+				    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter username or email">
 			  		</div>
 				  	<div class="form-group">
 					    <label for="exampleInputPassword1">Password <a href="/sessions/forgot_password">(forgot password)</a></label>
-					    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+					    <input data-toggle="tooltip" title="This is your JLRPG password, not necessarily your email one" type="password" class="form-control" placeholder="Password" name="password-tooltip"/>
 				  	</div>
 			  	    <div class="checkbox">
-                    <label>
-                        <input name="remember" type="checkbox" value="Remember Me">Remember Me
-                    </label>
-                    </div>
-	       			 <div class="form-group text-center">
+                <label>
+                  <input name="remember" type="checkbox" value="Remember Me">Remember Me
+                </label>
+              </div>
+       			 	<div class="form-group text-center">
 	       			 	<button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
-	                    <input type="submit" class="btn btn-success btn-login-submit" value="Login" />
-                    </div>
+                <a href="characters.html" class="btn btn-success" role="button">Submit</a>
+              </div>
 					</form>
 			  	</div>
 			  	<div class="panel-footer">Don't have an account! <a href="#" onClick=""> Sign Up Here </div>
@@ -85,7 +88,6 @@
 			</div>
 	  	</div>
 	</div>
-	<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 	</body>
 </html>

@@ -1,4 +1,13 @@
-.row{
-	right-margin: auto;
-	left-margin: auto;
+.row-thumbnails{
+	margin-right: auto;
+	margin-left: auto;
+}
+
+img.character-week{
+	height: 329px;
+	width: 229px;
+}
+
+.modal-popup{
+	margin-top: 130px;
 }
