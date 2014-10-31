@@ -26,14 +26,16 @@ var insertAvatar = function(character) {
 }
 
 var editCharacter = function(character) {
-    $('#edit').modal('show');
+    console.log(character.id);
     $('#name-edit').val(character.name);
     $('#' + character.gender.toLowerCase()).attr('checked', true);
     $('#class-edit').val(character.classType);
     $('#money-edit').val(character.money);
     $('#level-edit').val(character.level);
+    $('#edit').modal('show');
     $('#close-edit').click(function(){$('#edit').modal('hide')});
-    $('#update').click(function(){
+    $('#update').unbind().click(function(){
+        var $btn = $(this).button('loading');
         var selectedValue = $('input[type=radio]:checked').val().toUpperCase();
         console.log($('#name-edit').val());
         $.ajax({
@@ -52,6 +54,7 @@ var editCharacter = function(character) {
             accept: "application/json",
             success: function (data, textStatus, jqXHR) {
                 console.log("Done: no news is good news.");
+                $btn.button('reset')
                 $('#edit').modal('hide');
                 updateCharacterRow(character);
             }
@@ -60,12 +63,14 @@ var editCharacter = function(character) {
 }
 
 var updateCharacterRow = function(oldcharacter) {
+  console.log(oldcharacter.id);
   $.getJSON(
     "http://lmu-diabolical.appspot.com/characters/" + oldcharacter.id,
     function (character) {
+      console.log(character.id);
       console.log("got-in-updatechar");
       var tr = $('#' + character.id);
-      console.log(tr.find(".name").html());
+      console.log(tr);
       tr.find(".avatar").attr("src", insertAvatar(character));
       tr.find(".name").text(character.name);
       tr.find(".gender").text(character.gender);
@@ -85,14 +90,17 @@ var deleteCharacter = function(character) {
     html = $.parseHTML(str);
     $('#confirm-delete').html(html);
     $('#delete').modal('show');
-    $('#delete-confirmed').click(function(){
+    $('#close-delete').click(function(){$('#delete').modal('hide')});
+    $('#delete-confirmed').unbind().click(function(){
+       var $btn = $(this).button('loading')
         $.ajax({
             type: 'DELETE',
             url: "http://lmu-diabolical.appspot.com/characters/" + character.id,
             success: function (data, textStatus, jqXHR) {
                 $('#' + character.id).remove();
                 console.log("Gone baby gone.");
-                $('#remove').modal('hide');
+                $btn.button('reset')
+                $('#delete').modal('hide');
              }
         });
     });
@@ -108,8 +116,9 @@ var createCharacter = function() {
     $('#level-create').val();
     $('#close-create').click(function(){$('#create').modal('hide')});
     console.log($('#name-create').val());
-    $('#create-confirmed').click(function(){
+    $('#create-confirmed').unbind().click(function(){
       var selectedValue = $('input[type=radio]:checked').val().toUpperCase();
+      var $btn = $(this).button('loading')
       $.ajax({
           type: 'POST',
           url: "http://lmu-diabolical.appspot.com/characters",
@@ -127,6 +136,7 @@ var createCharacter = function() {
             // The new character can be accessed from the Location header.
             console.log("You may access the new character at:" +
             jqXHR.getResponseHeader("Location"));
+            $btn.button('reset')
             $('#create').modal('hide');
             location.reload();
             }
@@ -172,3 +182,8 @@ $(document).ready(function() {
     });
 });
 
+var showModal = function(){
+  $('#help').tooltip('toggle');
+    console.log('entre');
+
+};
