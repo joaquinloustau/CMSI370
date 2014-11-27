@@ -1,5 +1,5 @@
 \contentsline {section}{\numberline {1}Description}{3}
 \contentsline {section}{\numberline {2}Design}{3}
-\contentsline {section}{\numberline {3}Usage Scenarios}{3}
-\contentsline {section}{\numberline {4}Rationale}{3}
-\contentsline {section}{\numberline {5}Usability Metrics Forecast}{3}
+\contentsline {section}{\numberline {3}Usage Scenarios}{5}
+\contentsline {section}{\numberline {4}Rationale}{5}
+\contentsline {section}{\numberline {5}Usability Metrics Forecast}{5}
