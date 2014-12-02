@@ -1,3 +1,4 @@
+// JD: 12
 $.getJSON(
     "http://lmu-diabolical.appspot.com/characters",
     function (characters) {
@@ -19,6 +20,7 @@ $.getJSON(
 );
 
 var insertAvatar = function(character) {
+  // JD: 8, 13, 14 <---- Take heed, lots of notes here!!!
   if (character.gender.toLowerCase() === "male")
     return "male/" + character.id % 75 + ".png";
   else
@@ -29,6 +31,7 @@ var editCharacter = function(character) {
     console.log(character.id);
     $('#name-edit').val(character.name);
     $('#' + character.gender.toLowerCase()).attr('checked', true);
+    // JD: 15
     $('#class-edit').val(character.classType);
     $('#money-edit').val(character.money);
     $('#level-edit').val(character.level);
@@ -63,6 +66,7 @@ var editCharacter = function(character) {
 }
 
 var updateCharacterRow = function(oldcharacter) {
+    // JD: 8 ...so are you indenting by 2 spaces or 4 spaces?
   console.log(oldcharacter.id);
   $.getJSON(
     "http://lmu-diabolical.appspot.com/characters/" + oldcharacter.id,
@@ -72,12 +76,13 @@ var updateCharacterRow = function(oldcharacter) {
       var tr = $('#' + character.id);
       console.log(tr);
       tr.find(".avatar").attr("src", insertAvatar(character));
+      // JD: 15
       tr.find(".name").text(character.name);
       tr.find(".gender").text(character.gender);
       tr.find(".class").text(character.classType);
       tr.find(".money").text(character.money);
       tr.find(".level").text(character.level);
-      tr.find(".edit").click(function(){editCharacter(character)});
+      tr.find(".edit").click(function(){editCharacter(character)}); // JD: 11
       tr.find(".delete").click(function(){deleteCharacter(character)});
       return tr;
     }
@@ -86,6 +91,7 @@ var updateCharacterRow = function(oldcharacter) {
 }
 
 var deleteCharacter = function(character) {
+    // JD: 16
     str = "Are you sure you want to delete " + "<b>"+character.name+"</b>" + "?" + "</br>"+"</br>";
     html = $.parseHTML(str);
     $('#confirm-delete').html(html);
@@ -110,7 +116,7 @@ $('#create-character').click(function(){createCharacter()});
 
 var createCharacter = function() {
     $('#create').modal('show');
-    $('#name-create').val();
+    $('#name-create').val(); // JD: 17
     $('#class-create').val();
     $('#money-create').val();
     $('#level-create').val();
@@ -138,18 +144,18 @@ var createCharacter = function() {
             jqXHR.getResponseHeader("Location"));
             $btn.button('reset')
             $('#create').modal('hide');
-            location.reload();
-            }
+            location.reload(); // JD: 3
+            } // JD: 8
       });
     });
 }
 
 
-$(document).ready(function() {
+$(document).ready(function() { // JD: 11
     var activeSystemClass = $('.list-group-item.active');
 
     //something is entered in search form
-    $('#system-search').keyup( function() {
+    $('#system-search').keyup( function() { // JD: 11
        var that = this;
         // affect all table rows on in systems table
         var tableHead = $('.table-list-search thead');
@@ -157,7 +163,7 @@ $(document).ready(function() {
         var tableRowsClass = $('.table-list-search tbody tr');
         $('.search-sf').remove();
         tableRowsClass.each( function(i, val) {
-        
+            // JD: 8
         //Lower text for case insensitive
         var rowText = $(val).text().toLowerCase();
         var inputText = $(that).val().toLowerCase();
@@ -165,24 +171,25 @@ $(document).ready(function() {
           $('.search-query-sf').remove();
           tableHead.prepend('<tr class="search-query-sf"><td colspan="6"><strong>Searching for: "'
               + $(that).val()
-              + '"</strong></td></tr>');}
+              + '"</strong></td></tr>');} // JD: 18
         else{
           $('.search-query-sf').remove();}
 
-        if( rowText.indexOf( inputText ) == -1 ){
+        if( rowText.indexOf( inputText ) == -1 ){ // JD: 11
         tableRowsClass.eq(i).hide();}
-          else{
+          else{ // JD: 18 ...wow, this function looks like it was written by a different person...
           $('.search-sf').remove();
           tableRowsClass.eq(i).show();}
         });
         //all tr elements are hidden
         if(tableRowsClass.children(':visible').length == 0){
+            // JD: 8
         tableHead.append('<tr class="search-sf"><td class="text-muted" colspan="6">No entries found.</td></tr>');
         }
     });
 });
 
-var showModal = function(){
+var showModal = function(){ // JD: 11
   $('#help').tooltip('toggle');
     console.log('entre');
 

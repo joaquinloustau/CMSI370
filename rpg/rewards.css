@@ -1,7 +1,7 @@
 @import url("http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css");
 .panel-image {
     position: relative; 
-}
+} /* JD: 11 */
 .panel-image img.panel-image-preview {
     width: 100%;
 	border-radius: 4px 4px 0px 0px;

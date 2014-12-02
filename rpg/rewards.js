@@ -1,8 +1,10 @@
-$('#unlock-reward').unbind().click(function(){
+// JD: 12
+$('#unlock-reward').unbind().click(function(){ // JD: 11
 	console.log('entre');
 	$.getJSON(
+        // JD: 8
     "http://lmu-diabolical.appspot.com/items/spawn",
-    {level: 50,slot: "body"},
+    {level: 50,slot: "body"}, // JD: 11
     function (item) {
     	console.log(item);
     	$('.panel-image-preview').attr("src", insertReward(item))
@@ -12,7 +14,7 @@ $('#unlock-reward').unbind().click(function(){
     	$('#critchance-value').text(item.critchance.toFixed(2));
     	$('#defense-value').text(item.defense.toFixed(2));
     }
-  )
+  ) // JD: 8
 });
 
 

@@ -1,3 +1,4 @@
+// JD: 12, 19
 $('#unlock-reward').unbind().click(function(){
 	$.getJSON(
     "http://lmu-diabolical.appspot.com/items/spawn",
