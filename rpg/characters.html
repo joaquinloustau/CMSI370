@@ -1,34 +1,32 @@
 <!doctype html>
 <html>
-    <head> <!-- JD: 8 -->
-      <meta charset="UTF-8"/>
-      <title> JL RPG</title>
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-      <link rel="stylesheet" href="characters.css">
-      <!-- JD: 7 -->
-      <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
-      <script type="text/javascript" src="jquery.tablesorter.js"></script>
-    </head>
+  <head>
+    <meta charset="UTF-8"/>
+    <title> JL RPG </title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="characters.css">      
+  </head>
   
-    <body> <!-- JD: 8 -->
+  <body>
     <section class="container">
       <div class="row">
         <div class="col-xs-12 col-md-8 col-md-offset-2">
           <ul class="nav nav-tabs nav-justified">
-              <li><a href="rpg2.html">Home</a></li>
-              <li><a href="rpg2.html">Play</a></li>
-              <li><a href="characters.html">Characters</a></li>
-              <li><a href="javascript:showModal();">Help</a></li>
-              <li><a href="rewards.html">Rewards</a></li>  
-            </ul>
+            <li><a href="rpg2.html">Home</a></li>
+            <li><a href="rpg2.html">Play</a></li>
+            <li><a href="characters.html">Characters</a></li>
+            <li><a id="help-tab" href="#">Help</a></li>
+            <li><a href="rewards.html">Rewards</a></li>  
+          </ul>
         </div>
       </div>
     </section>
 
     <div class="span7 text-center"><h3>Character Roster</h3></div>
     <div class="span7 text-center">
-      <a href="#" id="create-character" class="btn btn-primary btn-xs" data-toggle="tooltip" title="This is your working space. Under the character tab you will be able to see all your characters, make necessary editions and delete the characters you do not want anymore. Be ware that other users can freely edit and delete the characters you created or previously existing characters" data-placement="right" container: 'body'><b></b> Add new character</a></br></br>
+      <a href="#" id="create-character" class="btn btn-primary btn-xs" data-toggle="tooltip" title="This is your working space. Under the character tab you will be able to see all your characters, make necessary editions and delete the characters you do not want anymore. Be ware that other users can freely edit and delete the characters you created or previously existing characters" data-placement="bottom" container: 'body'><b></b> Add new character</a></br></br>
     </div>
+    
     <div class="span7 text-center" id="searchBar">
       <div class="input-group">
         <input class="form-control" id="system-search" name="q" placeholder="Search for character or attribute" required>
@@ -37,6 +35,7 @@
         </span>
       </div>
     </div>
+    
     <table id="myTable" class="tablesorter-demo table-custom table-striped table-hover table-list-search">
       <thead>
         <tr>
@@ -52,7 +51,7 @@
       </thead>
       <tbody></tbody>
     </table>
-
+    
     <div class="templates hidden">
       <table class="table table-list-search display nowrap dataTable dtr-inline">
         <tbody>
@@ -69,13 +68,15 @@
         </tbody>
       </table>
     </div>
-
+   
     <div class="modal fade" id="edit" tabindex="-1" role="dialog" aria-hidden="true">
       <div class="container">
         <div class="col-md-4 col-md-offset-4 modal-popup">
           <div class="panel panel-default">
             <div class="panel-heading">
-              <button type="button" id="close-edit" class="close pull-right" aria-hidden="true">×</button><h3 class="panel-title"><strong>Edit Character</strong></h3></div> 
+              <button type="button" id="close-edit" class="close pull-right" aria-hidden="true"></button>
+              <h3 class="panel-title"><strong>Edit Character</strong></h3>
+            </div> 
             <div class="panel-body">
               <form role="form">
                 <div class="form-group">
@@ -87,10 +88,10 @@
                   <input type="text" class="form-control" id="class-edit" value="class">
                 </div>
                 <div class="checkbox">
-                  <label>
-                  <input name="remember" type="radio" id="female" value="female">Female
-                  <input name="remember" type="radio" id="male" value="male">Male
-                  </label>
+                  <label for="female-edit">Female</label>
+                  <input name="remember" type="radio" id="female-edit" value="female">
+                  <label for="male-edit">Male</label>
+                  <input name="remember" type="radio" id="male-edit" value="male">
                 </div>
                 <div class="form-group">
                   <label for="money-edit">Money</label>
@@ -110,7 +111,6 @@
       </div>
     </div>
 
-
     <div class="modal fade" id="create" tabindex="-1" role="dialog" aria-hidden="true">
       <div class="container">
         <div class="col-md-4 col-md-offset-4 modal-popup">
@@ -126,13 +126,13 @@
                 </div>
                 <div class="form-group">
                   <label for="class-create">Class</label>
-                    <input type="text" class="form-control" id="class-create" placeholder="class">
+                  <input type="text" class="form-control" id="class-create" placeholder="class">
                 </div>
                 <div class="checkbox">
-                  <label>
-                    <input name="remember" type="radio" id="female" value="female" checked>Female
-                    <input name="remember" type="radio" id="male" value="male">Male
-                  </label>
+                  <label for="female-create">Female</label>
+                  <input name="remember" type="radio" id="female-create" value="female" checked>
+                  <label for="male-create">Male</label>
+                  <input name="remember" type="radio" id="male-create" value="male">
                 </div>
                 <div class="form-group">
                   <label for="money-create">Money</label>
@@ -145,31 +145,36 @@
               </form>
             </div>
             <div class="panel-footer">  
-              <button type="button" data-loading-text="Creating..." id="create-confirmed" class="btn btn-warning btn-lg" style="width: 100%;"><span class="glyphicon glyphicon-ok-sign"></span>Create</button></div>
+              <button type="button" data-loading-text="Creating..." id="create-confirmed" class="btn btn-warning btn-lg" style="width: 100%;"><span class="glyphicon glyphicon-ok-sign"></span>Create</button>
             </div>
           </div>
         </div>
       </div>
+    </div>
 
-      <div class="modal fade" id="delete" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="container">
-          <div class="col-md-4 col-md-offset-4 modal-popup">
-            <div class="panel panel-default">
+    <div class="modal fade" id="delete" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="container">
+        <div class="col-md-4 col-md-offset-4 modal-popup">
+          <div class="panel panel-default">
             <button type="button" id="close-delete" class="close pull-right" aria-hidden="true">×</button>
-              <div class="panel-heading"><h3 class="panel-title"><strong>Delete Character</strong></h3>
-              </div> 
-              <div class="panel-body">
-                <div id="confirm-delete">Test</div>
-               <div class="form-group text-center">
+            <div class="panel-heading">
+              <h3 class="panel-title"><strong>Delete Character</strong></h3>
+            </div> 
+            <div class="panel-body">
+              <div id="confirm-delete">Test</div> 
+              <div class="form-group text-center">
                 <button type="button" id="delete-canceled" class="btn btn-default" data-dismiss="modal">Cancel</button>
                 <button type="button" data-loading-text="Deleting..." id="delete-confirmed" class="btn btn-danger" data-dismiss="modal">Delete</button>
-                </div>
               </div>
             </div>
           </div>
         </div>
+      </div>
     </div>
+
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="jquery.tablesorter.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
     <script src="characters.js"></script>
-</body> <!-- JD: 8 -->
+  </body>
 </html>

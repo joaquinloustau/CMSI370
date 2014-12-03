@@ -8,44 +8,44 @@
     </head>
   
     <body>
-    <section class="container">
-      <div class="row">
-        <div class="col-xs-12 col-md-8 col-md-offset-2">
-          <ul class="nav nav-tabs nav-justified">
-              <li><a href="rpg2.html">Home</a></li>
-              <li><a href="rpg2.html">Play</a></li>
-              <li><a href="characters.html">Characters</a></li>
-              <li><a href="javascript:showModal();">Help</a></li>
-              <li><a href="#">Rewards</a></li>  
-            </ul>
+      <section class="container">
+        <div class="row">
+          <div class="col-xs-12 col-md-8 col-md-offset-2">
+            <ul class="nav nav-tabs nav-justified">
+                <li><a href="rpg2.html">Home</a></li>
+                <li><a href="rpg2.html">Play</a></li>
+                <li><a href="characters.html">Characters</a></li>
+                <li><a id="help-tab" href="#">Help</a></li>
+                <li><a href="#">Rewards</a></li>  
+              </ul>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <div class="reward-div col-xs-12 col-md-2 col-md-offset-5">
-      <div class="panel panel-default">
-        <div class="panel-image" data-toggle="tooltip" title="Click on the image to see the attributes of your random reward" >
-          <img src="question-marks.jpg" class="panel-image-preview"/>
-          <label for="toggle-1"></label>
-        </div>
-        <input type="checkbox" id="toggle-1" class="panel-image-toggle">
-        <div class="panel-body">
-          <ul class="list-group">
-            <li class="list-group-item"><span class="badge" id="absorption-value"></span>Absorption</li>
-            <li class="list-group-item"><span class="badge" id="atkspeed-value"></span>Atkspeed</li>
-            <li class="list-group-item"><span class="badge" id="blockchance-value"></span>Blockchance</li>
-            <li class="list-group-item"><span class="badge" id="critchance-value"></span>Critchance</li>
-            <li class="list-group-item"><span class="badge" id="defense-value"></span>Defense</li>
-          </ul>
-        </div>
-        <div class="panel-footer text-center">
-          <button class="btn btn-primary btn-xs" id="unlock-reward">Unlock new Reward</button>
+      <div class="reward-div col-xs-12 col-md-2 col-md-offset-5">
+        <div class="panel panel-default">
+          <div class="panel-image" data-toggle="tooltip" title="Click on the image to see the attributes of your random reward" >
+            <img src="question-marks.jpg" class="panel-image-preview"/>
+          </div>
+          <input type="checkbox" class="panel-image" >
+            <div class="panel panel-collapse collapse" id="attributesReward">
+                <div class="panel-body">
+                  <ul class="list-group">
+                    <li class="list-group-item"><span class="badge" id="absorption-value"></span>Absorption</li>
+                    <li class="list-group-item"><span class="badge" id="atkspeed-value"></span>Atkspeed</li>
+                    <li class="list-group-item"><span class="badge" id="blockchance-value"></span>Blockchance</li>
+                    <li class="list-group-item"><span class="badge" id="critchance-value"></span>Critchance</li>
+                    <li class="list-group-item"><span class="badge" id="defense-value"></span>Defense</li>
+                  </ul>
+                </div>
+          </div>
+          <div class="panel-footer text-center" id="footer-help" data-toggle="tooltip" title="As the extraordinary player that you are, you have earned the right to claim rewards. Click on the Unlock New Reward to see your wonderful reward!" data-placement="right">
+            <button class="btn btn-primary btn-xs collapsed"  data-toggle="collapse" data-target="#attributesReward" id="unlock-reward" aria-expanded="true">Unlock new Reward</button>
+          </div>
         </div>
       </div>
-    </div>
-    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-    <script src="rewards.js"></script>
+      <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+      <script src="rewards.js"></script>
   </body>
 </html>
-

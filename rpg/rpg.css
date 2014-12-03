@@ -1,13 +1,13 @@
-.row-thumbnails{ /* JD: 11 */
-	margin-right: auto;
-	margin-left: auto;
+.row-thumbnails {
+  margin-right: auto;
+  margin-left: auto;
 }
 
-img.character-week{
-	height: 329px;
-	width: 229px;
+img.character-week {
+  height: 329px;
+  width: 229px;
 }
 
-.modal-popup{
-	margin-top: 130px;
+.modal-popup {
+  margin-top: 130px;
 }

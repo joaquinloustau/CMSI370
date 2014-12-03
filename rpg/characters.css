@@ -1,26 +1,26 @@
 img.avatar {
-    height: 25px;
+  height: 25px;
 }
 
 .table-custom {
-   width: 65%;
-   margin-right: auto;
-   margin-left:auto;
+  width: 65%;
+  margin-right: auto;
+  margin-left: auto;
 }
 
-#searchBar{ /* JD: 11 */
-	width: 65%;
-	margin-right: auto;
-	margin-left: auto;
+#searchBar {
+  width: 65%;
+  margin-right: auto;
+  margin-left: auto;
 }
 
-table.tablesorter-demo tr .header{
-	background-image: url(http://tablesorter.com/themes/blue/bg.gif);
-	background-repeat: no-repeat;
-	background-position: center right;
-	cursor: pointer;
+table.tablesorter-demo tr .header {
+  background-image: url(http://tablesorter.com/themes/blue/bg.gif);
+  background-repeat: no-repeat;
+  background-position: center right;
+  cursor: pointer;
 }
 
-.modal-popup{
-	margin-top: 130px;
+.modal-popup {
+  margin-top: 130px;
 }

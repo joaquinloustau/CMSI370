@@ -1,100 +1,93 @@
 <!doctype html>
 <html>
-	<head> <!-- JD: 6 -->
-		<meta charset="UTF-8"/>
-		<title> JL RPG</title>
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-		<link rel="stylesheet" href="rpg.css">
-        <!-- JD: 7 -->
-		<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
-		<script type="text/javascript" src="rpg2.js"></script>
-	</head>
+  <head>
+    <meta charset="UTF-8"/>
+    <title> JL RPG</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="rpg.css">
+  </head>
 
-	<body>
-        <!-- JD: 8 -->
-	<section class="container">
-		<div class="row">
-			<div class="col-xs-12 col-md-8 col-md-offset-2">
-				<ul class="nav nav-tabs nav-justified">
-					<li><a href="#">Home</a></li>
-					<li><a href="#loginModal" data-toggle="modal" data-target="#loginModal">Play</a></li>
-					<li><a href="characters.html">Characters</a></li>
-					<li><a <a href="javascript:showModal();">Help</a></li> <!-- JD: 9 -->
-					<li><a href="rewards.html">Rewards</a></li>	
-				</ul>
-			</div>
-		</div>
-	</section>
+  <body>
+    <section class="container">
+      <div class="row">
+        <div class="col-xs-12 col-md-8 col-md-offset-2">
+          <ul class="nav nav-tabs nav-justified">
+            <li><a href="#">Home</a></li>
+            <li><a href="#loginModal" data-toggle="modal" data-target="#loginModal">Play</a></li>
+            <li><a href="characters.html">Characters</a></li>
+            <li><a id="help-tab" href="#">Help</a></li>
+            <li><a href="rewards.html">Rewards</a></li> 
+          </ul>
+        </div>
+      </div>
+    </section>
 
-	<div class="span7 text-center"><h3>Characters of the week</h3></div>
-	<div class="row">
-		<div class="col-xs-12 col-md-2 col-md-offset-3">
-			<div class="thumbnail">
-	      <img src="iggy.png" class="character-week" alt="iggy" id="left-thumbnail" data-toggle="tooltip" title="These 3 characters have been the 3 most popular this week. Click on More at the end of their bio to learn about them!" data-placement="left" >
-	      <div class="caption">
-	        <h4>Iggy</h4>
-	        <p>Although its origin is somewhat clouded, the Lion mascot has been synonymous with Loyola Marymount University for more than 70 years. According to the Oct. 5, 1923 edition of the school newspaper, the Los Angeles Loyolan, the Lion mascot was suggested by an enthusiastic fan after 1919 when St. Vincent's College became Loyola College. Noting the Loyola football player's fierce competitiveness, that unknown fan described the Loyola players as Lions. The name did not generate too much popularity and the Loyola athletic nickname remained "Loyolan's" until 1923. </p>
-	        <p><a href="http://www.lmulions.com/trads/mascot.html" class="btn btn-default" role="button">More</a></p>
-	      </div>
-	    </div>
-	  </div>
-	  <div class="col-xs-12 col-md-2">
-	    <div class="thumbnail">
-	      <img src="peterpan.jpg" class="character-week" alt="peter-pan">
-	      <div class="caption">
-	        <h4>Peter Pan</h4>
-	        <p>Peter Pan is a character created by Scottish novelist and playwright J. M. Barrie. A mischievous boy who can fly and never grows up, Peter Pan spends his never-ending childhood adventuring on the small island of Neverland as the leader of his gang, the Lost Boys, interacting with mermaids, Native Americans, fairies, pirates, and occasionally ordinary children from the world outside of Neverland. In addition to two distinct works by Barrie, the character has been featured in a variety of media and merchandise, both adapting and expanding on Barrie's works.Peter Pan was first named Little White Bird.
-</p> <!-- JD: 8 -->
-	        <p><a href="http://en.wikipedia.org/wiki/Peter_Pan" class="btn btn-default" role="button">More</a></p>
-	      </div>
-	    </div>
-	  </div>  
-	  <div class="col-xs-12 col-md-2">
-        <!-- JD: 8 -->
-    <div class="thumbnail">
-      <img src="alanturing.jpg" class="character-week" alt="alan-turing">
-      <div class="caption">
-        <h4>Alan Turing</h4>
-        <p>Alan Mathison Turing, (23 June 1912 – 7 June 1954) was a British mathematician, logician, cryptanalyst, philosopher, pioneering computer scientist, mathematical biologist, and marathon and ultra distance runner. He was highly influential in the development of computer science, providing a formalisation of the concepts of "algorithm" and "computation" with the Turing machine, which can be considered a model of a general purpose computer.Turing is widely considered to be the father of theoretical computer science and artificial intelligence.</p>
-        <p> <a href="http://en.wikipedia.org/wiki/Alan_Turing" class="btn btn-default" role="button">More</a></p>
+    <div class="span7 text-center"><h3>Characters of the week</h3></div>
+    <div class="row">
+      <div class="col-xs-12 col-md-2 col-md-offset-3">
+        <div class="thumbnail">
+          <img src="iggy.png" id="help-home"class="character-week" alt="iggy" id="left-thumbnail" data-toggle="tooltip" title="These 3 characters have been the 3 most popular this week. Click on More at the end of their bio to learn about them!" data-placement="left">
+          <div class="caption">
+            <h4>Iggy</h4>
+            <p>Although its origin is somewhat clouded, the Lion mascot has been synonymous with Loyola Marymount University for more than 70 years. According to the Oct. 5, 1923 edition of the school newspaper, the Los Angeles Loyolan, the Lion mascot was suggested by an enthusiastic fan after 1919 when St. Vincent's College became Loyola College. Noting the Loyola football player's fierce competitiveness, that unknown fan described the Loyola players as Lions. The name did not generate too much popularity and the Loyola athletic nickname remained "Loyolan's" until 1923. </p>
+            <p><a href="http://www.lmulions.com/trads/mascot.html" class="btn btn-default" role="button">More</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-12 col-md-2">
+        <div class="thumbnail">
+          <img src="peterpan.jpg" class="character-week" alt="peter-pan">
+          <div class="caption">
+            <h4>Peter Pan</h4>
+            <p>Peter Pan is a character created by Scottish novelist and playwright J. M. Barrie. A mischievous boy who can fly and never grows up, Peter Pan spends his never-ending childhood adventuring on the small island of Neverland as the leader of his gang, the Lost Boys, interacting with mermaids, Native Americans, fairies, pirates, and occasionally ordinary children from the world outside of Neverland. In addition to two distinct works by Barrie, the character has been featured in a variety of media and merchandise, both adapting and expanding on Barrie's works.Peter Pan was first named Little White Bird.</p>
+            <p><a href="http://en.wikipedia.org/wiki/Peter_Pan" class="btn btn-default" role="button">More</a></p>
+          </div>
+        </div>
+      </div>  
+      <div class="col-xs-12 col-md-2">
+        <div class="thumbnail">
+          <img src="alanturing.jpg" class="character-week" alt="alan-turing">
+          <div class="caption">
+            <h4>Alan Turing</h4>
+            <p>Alan Mathison Turing, (23 June 1912 – 7 June 1954) was a British mathematician, logician, cryptanalyst, philosopher, pioneering computer scientist, mathematical biologist, and marathon and ultra distance runner. He was highly influential in the development of computer science, providing a formalisation of the concepts of "algorithm" and "computation" with the Turing machine, which can be considered a model of a general purpose computer.Turing is widely considered to be the father of theoretical computer science and artificial intelligence.</p>
+            <p> <a href="http://en.wikipedia.org/wiki/Alan_Turing" class="btn btn-default" role="button">More</a></p>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</div>
-
-	<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-hidden="true">
-		<div class="container">
-			<div class="col-md-4 col-md-offset-4 modal-popup">
-			    <div class="panel panel-default">
-				<div class="panel-heading"><h3 class="panel-title"><strong>Sign In </strong></h3></div> 
-			 	<div class="panel-body">
-			  		<form role="form">
-			  		<div class="form-group">
-				    <label for="exampleInputEmail1">Username or Email</label>
-				    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter username or email">
-			  		</div>
-				  	<div class="form-group">
-					    <label for="exampleInputPassword1">Password <a href="/sessions/forgot_password">(forgot password)</a></label>
-					    <input data-toggle="tooltip" title="This is your JLRPG password, not necessarily your email one" type="password" class="form-control" placeholder="Password" name="password-tooltip"/>
-				  	</div>
-			  	    <div class="checkbox">
-                <label>
-                  <input name="remember" type="checkbox" value="Remember Me">Remember Me
-                </label>
-              </div>
-                    <!-- JD: 8 -->
-       			 	<div class="form-group text-center">
-	       			 	<button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
-                <a href="characters.html" class="btn btn-success" role="button">Submit</a>
-              </div>
-					</form>
-			  	</div>
-			  	<div class="panel-footer">Don't have an account! <a href="#" onClick=""> Sign Up Here </div>
-				</div>
-			</div>
-	  	</div>
-	</div>
-    <!-- JD: 10 -->
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-	</body>
+    <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="container">
+        <div class="col-md-4 col-md-offset-4 modal-popup">
+          <div class="panel panel-default">
+            <div class="panel-heading"><h3 class="panel-title"><strong>Sign In </strong></h3></div> 
+            <div class="panel-body">
+              <form role="form">
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Username or Email</label>
+                  <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter username or email">
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword1">Password <a href="/sessions/forgot_password">(forgot password)</a></label>
+                  <input data-toggle="tooltip" title="This is your JLRPG password, not necessarily your email one" type="password" class="form-control" placeholder="Password" name="password-tooltip"/>
+                </div>
+                <div class="checkbox">
+                    <label>
+                      <input name="remember" type="checkbox" value="Remember Me">Remember Me
+                    </label>
+                </div>
+                <div class="form-group text-center">
+                  <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                  <a href="characters.html" class="btn btn-success" role="button">Submit</a>
+                </div>
+              </form>
+            </div>
+            <div class="panel-footer">Don't have an account! <a href="#" onClick=""> Sign Up Here </div>
+          </div>
+        </div>
+      </div>
+    </div>
+      <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+      <script type="text/javascript" src="rpg2.js"></script>
+  </body>
 </html>
