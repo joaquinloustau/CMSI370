@@ -22,13 +22,6 @@ $(function () {
     return "rewards/" + hasher + ".png";
   }
 
-  $(document).ready(function() {
-    $('.panel-image').tooltip({
-        placement: "right",
-        trigger: "hover"
-    });
-  });
-
   $("#help-tab").click( function() {showModal(); return false;});
 
   var showModal = function () {
@@ -39,5 +32,5 @@ $(function () {
     e.preventDefault();
   })
 
-})();
+});
 

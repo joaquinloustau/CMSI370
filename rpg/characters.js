@@ -79,6 +79,8 @@ $(function () {
         tr.find(".level").text(character.level);
         tr.find(".edit").click(function () {editCharacter(character)});
         tr.find(".delete").click(function () {deleteCharacter(character)});
+        $('#myTable').trigger('update');
+        $("#myTable").tablesorter({sortList: [[1,0]],headers: { 0:{sorter: false}, 6:{sorter: false}, 7:{sorter: false}}});
         return tr;
       }
     ); 
@@ -99,6 +101,7 @@ $(function () {
           $('#' + character.id).remove();
           console.log("Gone baby gone.");
           $btn.button('reset');
+          $('#myTable').trigger('update');
           $('#delete').modal('hide');
         }
       });
@@ -176,15 +179,15 @@ $(function () {
           editCharacter(character)});
         tr.find(".delete").click(function () {deleteCharacter(character)});
         $("tbody").append(tr);
+        $('#myTable').trigger('update');
         $("#myTable").tablesorter({sortList: [[1,0]],headers: { 0:{sorter: false}, 6:{sorter: false}, 7:{sorter: false}}});
         return tr;
     });
-}
+  }
 
-  $(document).ready(function () {
+  $(document).ready(function () {    
+    // Search bar cortesy of http://bootsnipp.com/snippets/featured/js-table-filter-simple-insensitive
     var activeSystemClass = $('.list-group-item.active');
-
-    //something is entered in search form
     $('#system-search').keyup(function () {
       var that = this;
       // affect all table rows on in systems table
@@ -215,4 +218,4 @@ $(function () {
     });
   });
 
-})();
+});
