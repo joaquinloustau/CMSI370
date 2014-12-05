@@ -7,13 +7,11 @@ $(function () {
     });
   });
 
-
-  $("#help-tab").click( function() {showModal(); return false;});
+  $("#help-tab").click( function() { showModal(); return false;} );
 
   var showModal = function () {
     $('#help-home').tooltip('toggle');
   }
-
-
+  
 });
 
