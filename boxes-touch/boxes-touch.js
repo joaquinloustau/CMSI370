@@ -1,86 +1,152 @@
-var BoxesTouch = {
-    /**
-     * Sets up the given jQuery collection as the drawing area(s).
-     */
-    setDrawingArea: function (jQueryElements) {
-        // Set up any pre-existing box elements for touch behavior.
+$(function() {
+    var stash = {};
+    window.BoxesTouch = {
+      setDrawingArea: function (jQueryElements) {
         jQueryElements
-            .addClass("drawing-area")
-            
-            // Event handler setup must be low-level because jQuery
-            // doesn't relay touch-specific event properties.
-            .each(function (index, element) {
-                element.addEventListener("touchmove", BoxesTouch.trackDrag, false);
-                element.addEventListener("touchend", BoxesTouch.endDrag, false);
-            })
+          .addClass("drawing-area")
+     
+          .each(function (index, element) {
+              element.addEventListener("touchstart", BoxesTouch.boxCreation, false);
+              element.addEventListener("touchmove", BoxesTouch.trackDrag, false);
+              element.addEventListener("touchend", BoxesTouch.endDrag, false);
+          })
 
-            .find("div.box").each(function (index, element) {
-                element.addEventListener("touchstart", BoxesTouch.startMove, false);
-                element.addEventListener("touchend", BoxesTouch.unhighlight, false);
+          .find("div.box").each(function (index, element) {
+              element.addEventListener("touchstart", BoxesTouch.startMove, false);
+              element.addEventListener("touchend", BoxesTouch.unhighlight, false);
+          });
+      },
+
+      boxCreation: function (event) {
+        console.log('hello');
+        $.each(event.changedTouches, function(index, touch) {
+          var stashAdd = {};
+          stash[touch.identifier] = stashAdd;
+          console.log(stash);
+          console.log(stashAdd);
+          stashAdd.initialX = touch.pageX;
+          stashAdd.initialY = touch.pageY;
+          $('<div></div>', {
+            class: 'box'
+          }).css({
+            left: touch.pageX + 'px',
+            top: touch.pageY + 'px',
+            width: '0px',
+            height: '0px'
+          }).appendTo('#drawing-area');
+          (stashAdd.creation) = $("div div:last-child");
+          (stashAdd.creation).addClass("creation-highlight");
+          $("#drawing-area").find("div.box").each(function(index, element) {
+              element.addEventListener("touchstart", BoxesTouch.startMove, false);
+              element.addEventListener("touchend", BoxesTouch.unhighlight, false);
+          });
+        });
+        event.stopPropagation();
+      },
+     
+      trackDrag: function (event) {
+        $.each(event.changedTouches, function (index, touch) {
+          event.preventDefault();
+          if (touch.target.movingBox) {
+            touch.target.movingBox.offset({
+                left: touch.pageX - touch.target.deltaX,
+                top: touch.pageY - touch.target.deltaY
             });
-    },
+           
+            //Box border turns red when out of range, warns user that box will be deleted
+            if (!((touch.target.movingBox).hasClass("delete-box")) &&
+                (touch.pageX - touch.target.deltaX > 512 ||
+                 touch.pageY - touch.target.deltaY > 512||
+                 touch.pageX - touch.target.deltaX < 0 ||
+                 touch.pageY - touch.target.deltaY < 0)) {
+                   (touch.target.movingBox).addClass("delete-box deletion-highlight");
+                }
+           if ((touch.target.movingBox).hasClass("delete-box") &&
+              (touch.pageX - touch.target.deltaX < 512 &&
+               touch.pageY - touch.target.deltaY < 512 &&
+               touch.pageX - touch.target.deltaX > 0 &&
+               touch.pageY - touch.target.deltaY > 0)) {
+                   (touch.target.movingBox).removeClass("delete-box deletion-highlight");
+              }
+          }
+             
+          var stashAdd = stash[touch.identifier];
+            if (stashAdd && stashAdd.creation) {
+              var newLeft, newTop, newWidth, newHeight;
+              if (touch.pageX < stashAdd.initialX) {
+                newLeft = touch.pageX;
+                newWidth = stashAdd.initialX - touch.pageX;
+                if (touch.pageY < stashAdd.initialY) {
+                  newTop = touch.pageY;
+                  newHeight = stashAdd.initialY - touch.pageY;
+                } else {
+                  newTop = stashAdd.initialY;
+                  newHeight = touch.pageY - stashAdd.initialY;
+                }
+              } else {
+                  newLeft = stashAdd.initialX;
+                  newWidth = touch.pageX - stashAdd.initialX;
+                  if (touch.pageY < stashAdd.initialY) {
+                      newTop = touch.pageY;
+                      newHeight = stashAdd.initialY - touch.pageY;
+                  } else {
+                      newTop = touch.initialY;
+                      newHeight = touch.pageY - stashAdd.initialY;
+                  }
+                }
 
-    /**
-     * Tracks a box as it is rubberbanded or moved across the drawing area.
-     */
-    trackDrag: function (event) {
-        $.each(event.changedTouches, function (index, touch) {
-            // Don't bother if we aren't tracking anything.
-            if (touch.target.movingBox) {
-                // Reposition the object.
-                touch.target.movingBox.offset({
-                    left: touch.pageX - touch.target.deltaX,
-                    top: touch.pageY - touch.target.deltaY
-                });
-            }
+              stashAdd.creation
+                  .offset({
+                      left: newLeft,
+                      top: newTop
+                  })
+                  .width(newWidth)
+                  .height(newHeight);
+          } 
         });
-        
-        // Don't do any touch scrolling.
         event.preventDefault();
-    },
+      },
 
-    /**
-     * Concludes a drawing or moving sequence.
-     */
-    endDrag: function (event) {
-        $.each(event.changedTouches, function (index, touch) {
+        endDrag: function (event) {
+          $.each(event.changedTouches, function (index, touch) {
             if (touch.target.movingBox) {
-                // Change state to "not-moving-anything" by clearing out
-                // touch.target.movingBox.
-                touch.target.movingBox = null;
+              // Change state to "not-moving-anything" by clearing out
+              // touch.target.movingBox.
+              touch.target.movingBox = null;
             }
-        });
-    },
+            var stashAdd = stash[touch.identifier];
+            if (stashAdd && stashAdd.creation) {
+              var $creation = $(stashAdd.creation);
+              if ($creation.width() < 20 || $creation.height() < 20) {
+                  $creation.remove();
+              }
+              stashAdd.creation.removeClass("creation-highlight");
+              stashAdd.creation = null;
+              delete stash[touch.identifier];
+            }
+          });
+        },
 
-    /**
-     * Indicates that an element is unhighlighted.
-     */
-    unhighlight: function () {
-        $(this).removeClass("box-highlight");
-    },
+        
+        unhighlight: function () {
+            $(this).removeClass("box-highlight");
+            if ($(this).hasClass("delete-box")) {
+                $(this).remove();
+            };
+        },
 
-    /**
-     * Begins a box move sequence.
-     */
-    startMove: function (event) {
-        $.each(event.changedTouches, function (index, touch) {
-            // Highlight the element.
+        startMove: function (event) {
+          $.each(event.changedTouches, function (index, touch) {
             $(touch.target).addClass("box-highlight");
 
-            // Take note of the box's current (global) location.
             var jThis = $(touch.target),
                 startOffset = jThis.offset();
 
-            // Set the drawing area's state to indicate that it is
-            // in the middle of a move.
             touch.target.movingBox = jThis;
             touch.target.deltaX = touch.pageX - startOffset.left;
             touch.target.deltaY = touch.pageY - startOffset.top;
-        });
-
-        // Eat up the event so that the drawing area does not
-        // deal with it.
-        event.stopPropagation();
-    }
-
-};
+          });
+          event.stopPropagation();
+        }
+    };
+});

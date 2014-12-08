@@ -5,7 +5,7 @@ $(function () {
       "http://lmu-diabolical.appspot.com/items/spawn",
       {level: 50, slot: "body"},
       function (item) {
-        $('.panel-image-preview').attr("src", insertReward(item));
+        $('#reward').attr("src", insertReward(item));
         $('#absorption-value').text(item.absorption.toFixed(2));
         $('#atkspeed-value').text(item.atkspeed.toFixed(2));
         $('#blockchance-value').text(item.blockchance.toFixed(2));
