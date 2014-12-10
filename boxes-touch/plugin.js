@@ -1,4 +1,4 @@
-$(function() {
+(function($) {
   var itemsdropped = 0;
   var itemMoved = function () {
     console.log('entre');
@@ -34,14 +34,18 @@ $(function() {
               top: touch.pageY - touch.target.deltaY
             });
 
-          console.log($('#destination-box').width());
+          /*console.log($('#destination-box').width());
           console.log(touch.target.movingBox.width());
+          console.log($('#destination-box').offset().left);
+          console.log($('#destination-box').offset().top);*/
+          console.log($('#destination-box'));
+
 
           var inRange = 
-            touch.pageX - touch.target.deltaX > $('#destination-box').offset().left &&
-            touch.target.movingBox.right < ($('#destination-box').offset().left + $('#destination-box').width()) &&
-            touch.pageY - touch.target.deltaY > $('#destination-box').offset().top &&
-            touch.target.movingBox.bottom < ($('#destination-box').offset().top + $('#destination-box').height()); 
+            touch.pageX > $('#destination-box').offset().left &&
+            touch.pageX < ($('#destination-box').offset().left + $('#destination-box').width()) &&
+            touch.pageY > $('#destination-box').offset().top &&
+            touch.pageY < ($('#destination-box').offset().top + $('#destination-box').height()); 
 
           console.log(inRange);
           //Box border turns red when out of range, warns user that box will be deleted
@@ -97,4 +101,7 @@ $(function() {
       event.stopPropagation();
     }
   };
-});
+   $.fn.boxes = function () {
+    BoxesTouch.setDrawingArea(this);
+  };
+}(jQuery));

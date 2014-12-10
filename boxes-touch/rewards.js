@@ -1,7 +1,6 @@
 $(function () {
 
   $('#unlock-reward').click(function () {
-    //($('#attributesReward').attr('src') === "../rpg/question-marks.jpg")
     console.log('unlock');
     $.getJSON(
       "http://lmu-diabolical.appspot.com/items/spawn",

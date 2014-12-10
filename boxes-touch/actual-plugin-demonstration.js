@@ -32,10 +32,10 @@
           });
           
           var inRange2 = 
-              touch.pageX > $('#destination-box').position().left &&
-              touch.pageX < $('#destination-box').position().left + $('#destination-box').width() &&
-              touch.pageY > $('#destination-box').position().top &&
-              touch.pageY < $('#destination-box').position().top + $('#destination-box').height(); 
+              touch.pageX - touch.target.deltaX > $('#destination-box').position().left &&
+              touch.target.movingBox.right < $('#destination-box').position().left + $('#destination-box').width() &&
+              touch.pageY - touch.target.deltaY > $('#destination-box').position().top &&
+              touch.target.movingBox.bottom < $('#destination-box').position().top + $('#destination-box').height(); 
            
           //Box border turns red when out of range, warns user that box will be deleted
           if (inRange2) {
