@@ -34,6 +34,13 @@
               top: touch.pageY - touch.target.deltaY
             });
 
+          /*console.log($('#destination-box').width());
+          console.log(touch.target.movingBox.width());
+          console.log($('#destination-box').offset().left);
+          console.log($('#destination-box').offset().top);*/
+          console.log($('#destination-box'));
+
+
           var inRange = 
             touch.pageX > $('#destination-box').offset().left &&
             touch.pageX < ($('#destination-box').offset().left + $('#destination-box').width()) &&
@@ -77,6 +84,8 @@
         BoxesTouch.setDrawingArea($("#origin-box"));
       };
     },
+
+    //$('#attributesReward').unbind('hide.bs.collapse');
 
     startMove: function (event) {
       $.each(event.changedTouches, function (index, touch) {
