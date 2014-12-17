@@ -1,6 +1,10 @@
 (function($) {
   $.fn.drags = function() {
     var currentBox = null;
+    var inDestinationBox = 0;
+    var boxMoved = function () {
+      $('.counter').text("Items in Destination Box (" + inDestinationBox +")")
+    }
 
     $('.box').on("mousedown", function(e) {
       currentBox = $(this);
@@ -34,7 +38,9 @@
         if (currentBox.hasClass("delete-box")) {
           currentBox.remove();
           inDestinationBox++;
+          boxMoved();
         };
+        $(this).off("mouseup");
       });
       e.preventDefault(); // disable selection
       
@@ -43,5 +49,6 @@
     });
   };
 })(jQuery);
+
 
 

@@ -1,98 +1,56 @@
 (function($) {
-  var itemsdropped = 0;
-  var itemMoved = function () {
-    console.log('entre');
-    $('#basket').text("Items in Cart (" + itemsdropped + ")");
-  }
+  $.fn.drags = function() {
+    var $selected = null;
+    var inDestinationBox = 0;
 
-  window.BoxesTouch = {
-    setDrawingArea: function (jQueryElements) {
-      console.log('hola');
-      jQueryElements
-        .addClass("origin-box")
-   
-        .each(function (index, element) {
-            element.addEventListener("touchstart", BoxesTouch.createBox, false);
-            element.addEventListener("touchmove", BoxesTouch.trackDrag, false);
-            element.addEventListener("touchend", BoxesTouch.endDrag, false);
-        })
-
-        .find("img.box").each(function (index, element) {
-            element.addEventListener("touchstart", BoxesTouch.startMove, false);
-            element.addEventListener("touchend", BoxesTouch.unhighlight, false);
+    $('.box').on("mousedown", function(e) {
+      $selected = $(this);
+      $selected.addClass('draggable');
+      
+      var drg_h = $selected.outerHeight(),
+          drg_w = $selected.outerWidth(),
+          pos_y = $selected.offset().top + drg_h - e.pageY,
+          pos_x = $selected.offset().left + drg_w - e.pageX;
+      
+      $(document).on("mousemove", function(e) {
+        $selected.offset({
+          top: e.pageY + pos_y - drg_h,
+          left: e.pageX + pos_x - drg_w
         });
-    },
 
-    trackDrag: function (event) {
-      $.each(event.changedTouches, function (index, touch) {
-        event.preventDefault();
-          if (touch.target.movingBox) {
-            touch.target.movingBox.bottom = touch.pageY - touch.target.deltaY + touch.target.movingBox.height();
-            touch.target.movingBox.right = touch.pageX - touch.target.deltaX + touch.target.movingBox.width();
-            touch.target.movingBox.offset({
-              left: touch.pageX - touch.target.deltaX,
-              top: touch.pageY - touch.target.deltaY
-            });
-            
-          var inRange = 
-            touch.pageX > $('#destination-box').offset().left &&
-            touch.pageX < ($('#destination-box').offset().left + $('#destination-box').width()) &&
-            touch.pageY > $('#destination-box').offset().top &&
-            touch.pageY < ($('#destination-box').offset().top + $('#destination-box').height()); 
+        var inRange = 
+          e.pageX > $('.destination-box').offset().left &&
+          e.pageX < ($('.destination-box').offset().left + $('.destination-box').width()) &&
+          e.pageY > $('.destination-box').offset().top &&
+          e.pageY < ($('.destination-box').offset().top + $('.destination-box').height());
 
-          console.log(inRange);
-          //Box border turns red when out of range, warns user that box will be deleted
-          if (inRange) {
-            console.log('eliminar');
-            (touch.target.movingBox).addClass("delete-box deletebox-highlight");
-          } else {
-            (touch.target.movingBox).removeClass("delete-box deletebox-highlight");
-          }
-        }
+        if (inRange) {
+          $selected.addClass("delete-box deletebox-highlight");
+        } else {
+          $selected.removeClass("delete-box deletebox-highlight");
+        } 
+      
+      }).on("mouseup", function() {
+        console.log(inDestinationBox)
+        $(this).off("mousemove"); // Unbind events from document
+        if ($selected.hasClass("delete-box")) {
+          inDestinationBox++;
+          $selected.remove();
+          //$('#attributesReward').unbind('hide.bs.collapse');
+          $('#attributesReward').collapse('toggle');
+          $('#image-holder').append('<img src="../rpg/question-marks.jpg" class="box panel-image-preview" id="reward"/>');
+          $('#attributesReward').on('hide.bs.collapse', function (e) {
+           e.preventDefault();
+          });
+          console.log('elimine');
+          console.log(inDestinationBox)
+        };
       });
-      //event.preventDefault();
-    },
-
-    endDrag: function (event) {
-      $.each(event.changedTouches, function (index, touch) {
-        if (touch.target.movingBox) {
-          touch.target.movingBox.unhighlight;
-          touch.target.movingBox = null;
-        }
-      });
-    },
-
-    unhighlight: function () {
-      $(this).removeClass("box-highlight");
-      if ($(this).hasClass("delete-box")) {
-        $(this).remove();
-        $('#attributesReward').unbind('hide.bs.collapse');
-        $('#attributesReward').collapse('toggle');
-        $('#image-holder').append('<img src="../rpg/question-marks.jpg" class="box panel-image-preview" id="reward"/>');
-        $('#attributesReward').on('hide.bs.collapse', function (e) {
-         e.preventDefault();
-        });
-        itemsdropped++;
-        itemMoved();
-        BoxesTouch.setDrawingArea($("#origin-box"));
-      };
-    },
-
-    startMove: function (event) {
-      $.each(event.changedTouches, function (index, touch) {
-        $(touch.target).addClass("box-highlight");
-
-        var jThis = $(touch.target),
-        startOffset = jThis.offset();
-
-        touch.target.movingBox = jThis;
-        touch.target.deltaX = touch.pageX - startOffset.left;
-        touch.target.deltaY = touch.pageY - startOffset.top;
-      });
-      event.stopPropagation();
-    }
+      e.preventDefault(); // disable selection
+      
+    }).on("mouseup", function() {
+      console.log('items');
+      $selected.removeClass('draggable');
+    });
   };
-   $.fn.boxes = function () {
-    BoxesTouch.setDrawingArea(this);
-  };
-}(jQuery));
+})(jQuery);

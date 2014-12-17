@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width" />
     <title>Direct Manipulation on a Web Page: Touch Version</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="widget.css"/>
-    <link rel="stylesheet" type="text/css" href="rewards-widget.css"/>
+    <link rel="stylesheet" type="text/css" href="drag-and-drop-rpg.css"/>
+    <link rel="stylesheet" type="text/css" href="drag-and-drop-rpr-rewards.css"/>
   </head>
     
   <body>
@@ -27,7 +27,7 @@
               
     <div id="origin-box" class="reward-div col-xs-4 col-xs-offset-1">
       <div class="panel panel-default panel-origin">
-        <div class="box panel-image-origin" id="image-holder">
+        <div class="panel-image-origin" id="image-holder">
           <img src="../rpg/question-marks.jpg" class="box panel-image-preview" id="reward"/>
         </div>
         <div class="panel panel-collapse collapse" id="attributesReward">
@@ -47,7 +47,7 @@
       </div>
     </div>
 
-    <div id="destination-box" class="reward-div col-xs-4 col-xs-offset-1">
+    <div class = "destination-box reward-div col-xs-4 col-xs-offset-1">
       <div class="panel panel-default panel-destination">
         <div class="panel-image-destination">
           <img src="cart.gif" class="panel-image-preview"/>
@@ -61,13 +61,13 @@
 
     <!-- Load up the controller code. -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-    <script src="plugin.js"></script>
-    <script src="rewards.js"></script>
+    <script src="drag-and-drop-rpg.js"></script>
+    <script src="drag-and-drop-rpg-rewards.js"></script>
 
     <!-- Code that is totally specific to this page. -->
     <script>
       $(function () {
-        $("#origin-box").boxes();
+        $(".origin-box").drags();
       });
     </script>
   </body>
