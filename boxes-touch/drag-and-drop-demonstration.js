@@ -1,7 +1,7 @@
 (function($) {
+  var inDestinationBox = 0;
   $.fn.drags = function() {
     var currentBox = null;
-    var inDestinationBox = 0;
     var boxMoved = function () {
       $('.counter').text("Items in Destination Box (" + inDestinationBox +")")
     }

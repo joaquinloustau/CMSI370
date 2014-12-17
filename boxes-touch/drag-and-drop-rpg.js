@@ -1,7 +1,11 @@
 (function($) {
+  var inDestinationBox = 0;
   $.fn.drags = function() {
     var $selected = null;
-    var inDestinationBox = 0;
+    var boxMoved = function () {
+      $('.counter').text("Items in Cart(" + inDestinationBox +")")
+    }
+
 
     $('.box').on("mousedown", function(e) {
       $selected = $(this);
@@ -34,9 +38,10 @@
         console.log(inDestinationBox)
         $(this).off("mousemove"); // Unbind events from document
         if ($selected.hasClass("delete-box")) {
-          inDestinationBox++;
           $selected.remove();
-          //$('#attributesReward').unbind('hide.bs.collapse');
+          inDestinationBox++;
+          boxMoved();
+          $('#attributesReward').unbind('hide.bs.collapse');
           $('#attributesReward').collapse('toggle');
           $('#image-holder').append('<img src="../rpg/question-marks.jpg" class="box panel-image-preview" id="reward"/>');
           $('#attributesReward').on('hide.bs.collapse', function (e) {
@@ -44,7 +49,9 @@
           });
           console.log('elimine');
           console.log(inDestinationBox)
+          $('.origin-box').drags();
         };
+        $(this).off("mouseup");
       });
       e.preventDefault(); // disable selection
       
