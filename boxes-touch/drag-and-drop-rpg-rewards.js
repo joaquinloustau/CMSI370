@@ -3,7 +3,7 @@ $(function () {
   $('#unlock-reward').click(function () {
     $.getJSON(
       "http://lmu-diabolical.appspot.com/items/spawn",
-      {level: 50, slot: "body"},
+      { level: 50, slot: "body" },
       function (item) {
         $('#reward').attr("src", insertReward(item));
         $('#absorption-value').text(item.absorption.toFixed(2));
@@ -16,13 +16,11 @@ $(function () {
 
   var insertReward = function(item) {
     var hasher = (Math.floor(item.critchance * 1000000)) % 371;
-    console.log('entre');
     return "rewards/" + hasher + ".png";
   }
 
   $('#attributesReward').on('hide.bs.collapse', function (e) {
     e.preventDefault();
-    console.log('lo deje abierto');
   })
 });
 

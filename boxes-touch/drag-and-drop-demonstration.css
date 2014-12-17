@@ -1,0 +1,36 @@
+body { 
+  padding:50px;
+}
+
+.box {
+  cursor:move;
+  width:70px;
+  height:70px;
+  border:1px solid black;
+  margin:2px;
+  float:left;
+  position: relative;
+
+}
+
+.destination-box {
+  padding-right: 20px;
+  position: relative;
+  user-select: none;
+  z-index: 0;
+  width: 30vw;
+}
+
+.box-highlight {
+  box-shadow: 0px 0px 6px #88F;
+}
+
+.newbox-highlight {
+  border: solid green;
+  box-shadow: 0px 0px 6px #88F;
+}
+
+.deletebox-highlight {
+  border: solid red;
+  box-shadow: 0px 0px 6px #FF0000;
+}

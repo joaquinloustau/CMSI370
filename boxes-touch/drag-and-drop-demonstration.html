@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Direct Manipulation on a Web Page</title>
+    <link rel="stylesheet" type="text/css" href="drag-and-drop-demonstration.css"/>
+
+    <!-- Styles that are totally specific to this page. -->
+    <style>
+      .origin-box {
+        border: 1px solid black;
+        width: 300px;
+        height: 300px;
+      }
+
+      .destination-box {
+        position: fixed;
+        top: 1em;
+        right: 1em;
+        left: 500px;
+        border: 1px solid black;
+        width: 200px;
+        height: 200px;
+      }
+    </style>
+  </head>
+    
+  <body>
+    <div class="origin-box">
+      <div class="box" id="move-box" style="width: 60px; height: 60px; left: 50px; top: 50px"></div>
+      <div class="box" style="width: 80px; height: 50px; left: 84px; top: 106px"></div>
+      <div class="box" style="width: 70px; height: 90px; left: 10px; top: 204px"></div>
+    </div>
+    <div class="destination-box">
+      <div class="counter">Items in Destination Box (0)</div>
+    </div>
+        
+    <!-- Load up jQuery first. -->
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+        
+    <!-- Load up the controller code. -->
+    <script src="drag-and-drop-demonstration.js"></script>
+        
+    <!-- Code that is totally specific to this page. -->
+    <script>
+      $(function () {
+        $("#origin-box").drags();
+      });
+    </script>
+  </body>
+</html>

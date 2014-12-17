@@ -1,6 +1,5 @@
 $(function() {
   var ongoingTouches = {};
-  var currTouch = {} // JD: 4
   window.BoxesTouch = {
     setDrawingArea: function (jQueryElements) {
       jQueryElements
@@ -21,55 +20,51 @@ $(function() {
     trackDrag: function (event) {
       $.each(event.changedTouches, function (index, touch) {
         event.preventDefault();
-        if (touch.target.movingBox) {
-          touch.target.movingBox.offset({ // JD: 10
-            left: touch.pageX - touch.target.deltaX,
-            top: touch.pageY - touch.target.deltaY
-          });
+        var currentBox = touch.target.movingBox;
+        if (currentBox) {
+          var originLeft = touch.pageX - touch.target.deltaX;
+              originTop = touch.pageY - touch.target.deltaY;
+
+          currentBox.offset({ left: originLeft, top: originTop });
            
           var inRange = 
-            touch.pageX - touch.target.deltaX < $('#drawing-area').width() &&
-            touch.pageY - touch.target.deltaY < $('#drawing-area').height() &&
-            touch.pageX - touch.target.deltaX > 0 &&
-            touch.pageY - touch.target.deltaY > 0; 
+            originLeft > 0 && originLeft < $('#drawing-area').width() &&
+            originTop > 0 && originTop < $('#drawing-area').height(); 
            
-            //Box border turns red when out of range, warns user that box will be deleted
-            if (!inRange) {
-              console.log('eliminar');
-              (touch.target.movingBox).addClass("delete-box deletebox-highlight"); // JD: 8, 10
-            } else {
-              (touch.target.movingBox).removeClass("delete-box deletebox-highlight"); // JD: 8, 10
-            }
+          //Box border turns red when out of range, warns user that box will be deleted
+          if (!inRange) {
+            currentBox.addClass("delete-box deletebox-highlight"); 
+          } else {
+            currentBox.removeClass("delete-box deletebox-highlight");
+          }
         }
              
         var newBox = ongoingTouches[touch.identifier];
-          if (newBox && newBox.box) { // JD: 5
-            var newLeft = Math.min(touch.pageX,newBox.initialX); // JD: 6
+        if (newBox && newBox.box) {
+          var newLeft = Math.min(touch.pageX,newBox.initialX);
               newTop = Math.min(touch.pageY,newBox.initialY); 
               newHeight = Math.abs(touch.pageY - newBox.initialY); 
               newWidth = Math.abs(touch.pageX - newBox.initialX); 
 
-            newBox.box
-              .offset({
-                left: newLeft,
-                top: newTop
-              })
-              .width(newWidth)
-              .height(newHeight);
-          }
-        });
-        event.preventDefault();
-      }, // JD: 5 ...all the way to here (see how it isn't lined up with endDrag)
+          newBox.box
+            .offset({
+              left: newLeft,
+              top: newTop
+            })
+            .width(newWidth)
+            .height(newHeight);
+        }
+      });
+      event.preventDefault();
+    },
 
     endDrag: function (event) {
       $.each(event.changedTouches, function (index, touch) {
         if (touch.target.movingBox) {
-          touch.target.movingBox.unhighlight; // JD: 9
           touch.target.movingBox = null;
         }
         var newBox = ongoingTouches[touch.identifier];
         if (newBox && newBox.box) {
-          var $box = $(newBox.creation); // JD: 4
           newBox.box.removeClass("newbox-highlight");
           newBox.box = null;
           delete ongoingTouches[touch.identifier];
@@ -78,17 +73,19 @@ $(function() {
     },
   
     unhighlight: function () {
-      $(this).removeClass("box-highlight");
-        if ($(this).hasClass("delete-box")) { // JD: 7
-          $(this).remove(); // JD: 7
+      var currentBox = $(this);
+      currentBox.removeClass("box-highlight");
+        if (currentBox.hasClass("delete-box")) { 
+          currentBox.remove();
         };
       },
 
     startMove: function (event) {
       $.each(event.changedTouches, function (index, touch) {
-        $(touch.target).addClass("box-highlight");
         var jThis = $(touch.target),
           startOffset = jThis.offset();
+        jThis.addClass("box-highlight");
+        
         touch.target.movingBox = jThis;
         touch.target.deltaX = touch.pageX - startOffset.left;
         touch.target.deltaY = touch.pageY - startOffset.top;
@@ -110,9 +107,9 @@ $(function() {
           width: '0px',
           height: '0px'
         }).appendTo('#drawing-area');
-        (newBox.box) = $("div div:last-child"); // JD: 8
-        (newBox.box).addClass("newbox-highlight"); // JD: 8
-        $("#drawing-area").find("div.box").each(function(index, element) { // JD: 6
+        newBox.box = $("div div:last-child"); 
+        newBox.box.addClass("newbox-highlight"); 
+        $("#drawing-area").find("div.box").each(function (index, element) {
           element.addEventListener("touchstart", BoxesTouch.startMove, false);
           element.addEventListener("touchend", BoxesTouch.unhighlight, false);
         });

@@ -1,11 +1,20 @@
-.drawing-area {
+.origin-box {
   position: relative;
   user-select: none;
+  z-index: 1;
+  width: 25vw;
+}
+
+.destination-box {
+  padding-right: 20px;
+  position: relative;
+  user-select: none;
+  z-index: 0;
+  width: 30vw;
 }
 
 .box {
-  border: thin solid black;
-  position: absolute;
+  position: relative;
 }
 
 .box-highlight {
