@@ -31,13 +31,12 @@ $(function() {
             originLeft > 0 && originLeft < $('#drawing-area').width() &&
             originTop > 0 && originTop < $('#drawing-area').height(); 
            
-            //Box border turns red when out of range, warns user that box will be deleted
-            if (!inRange) {
-              console.log('eliminar');
-              currentBox.addClass("delete-box deletebox-highlight"); // JD: 8, 10
-            } else {
-              currentBox.removeClass("delete-box deletebox-highlight"); // JD: 8, 10
-            }
+          //Box border turns red when out of range, warns user that box will be deleted
+          if (!inRange) {
+            currentBox.addClass("delete-box deletebox-highlight"); 
+          } else {
+            currentBox.removeClass("delete-box deletebox-highlight");
+          }
         }
              
         var newBox = ongoingTouches[touch.identifier];
@@ -54,7 +53,7 @@ $(function() {
             })
             .width(newWidth)
             .height(newHeight);
-          }
+        }
       });
       event.preventDefault();
     },

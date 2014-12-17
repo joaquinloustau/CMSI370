@@ -1,23 +1,22 @@
 (function($) {
   var inDestinationBox = 0;
   $.fn.drags = function() {
-    var $selected = null;
+    var currentBox = null;
     var boxMoved = function () {
       $('.counter').text("Items in Cart(" + inDestinationBox +")")
     }
 
-
     $('.box').on("mousedown", function(e) {
-      $selected = $(this);
-      $selected.addClass('draggable');
+      currentBox = $(this);
+      currentBox.addClass('draggable');
       
-      var drg_h = $selected.outerHeight(),
-          drg_w = $selected.outerWidth(),
-          pos_y = $selected.offset().top + drg_h - e.pageY,
-          pos_x = $selected.offset().left + drg_w - e.pageX;
+      var drg_h = currentBox.outerHeight(),
+          drg_w = currentBox.outerWidth(),
+          pos_y = currentBox.offset().top + drg_h - e.pageY,
+          pos_x = currentBox.offset().left + drg_w - e.pageX;
       
       $(document).on("mousemove", function(e) {
-        $selected.offset({
+        currentBox.offset({
           top: e.pageY + pos_y - drg_h,
           left: e.pageX + pos_x - drg_w
         });
@@ -29,35 +28,27 @@
           e.pageY < ($('.destination-box').offset().top + $('.destination-box').height());
 
         if (inRange) {
-          $selected.addClass("delete-box deletebox-highlight");
+          currentBox.addClass("delete-box deletebox-highlight");
         } else {
-          $selected.removeClass("delete-box deletebox-highlight");
+          currentBox.removeClass("delete-box deletebox-highlight");
         } 
-      
       }).on("mouseup", function() {
-        console.log(inDestinationBox)
         $(this).off("mousemove"); // Unbind events from document
-        if ($selected.hasClass("delete-box")) {
-          $selected.remove();
+        if (currentBox.hasClass("delete-box")) {
+          currentBox.remove();
           inDestinationBox++;
           boxMoved();
           $('#attributesReward').unbind('hide.bs.collapse');
           $('#attributesReward').collapse('toggle');
           $('#image-holder').append('<img src="../rpg/question-marks.jpg" class="box panel-image-preview" id="reward"/>');
-          $('#attributesReward').on('hide.bs.collapse', function (e) {
-           e.preventDefault();
-          });
-          console.log('elimine');
-          console.log(inDestinationBox)
+          $('#attributesReward').on('hide.bs.collapse', function (e) { e.preventDefault(); });
           $('.origin-box').drags();
         };
         $(this).off("mouseup");
       });
       e.preventDefault(); // disable selection
-      
     }).on("mouseup", function() {
-      console.log('items');
-      $selected.removeClass('draggable');
+      currentBox.removeClass('draggable');
     });
   };
 })(jQuery);

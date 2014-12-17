@@ -33,7 +33,6 @@
         $(this).off("mousemove"); // Unbind events from document
         if (currentBox.hasClass("delete-box")) {
           currentBox.remove();
-          inDestinationBox++;
         };
       });
       e.preventDefault(); // disable selection

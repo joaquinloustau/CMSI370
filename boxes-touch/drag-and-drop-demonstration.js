@@ -43,7 +43,6 @@
         $(this).off("mouseup");
       });
       e.preventDefault(); // disable selection
-      
     }).on("mouseup", function() {
       currentBox.removeClass('draggable');
     });

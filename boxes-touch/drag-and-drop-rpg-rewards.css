@@ -3,30 +3,30 @@
 .panel-image-origin {
   position: relative; 
   height: 150px;
-  width: 25vw;
+  width: 250px;
 }
 .panel-origin {
-  width: 25vw;
+  width: 250px;
 }
 
 .panel-destination {
-  width: 30vw;
+  width: 250px;
 }
 
 .panel-image-destination {
   position: relative; 
-  height: 200px;
-  width: 30vw;
+  height: 150px;
+  width: 250px;
 }
 
 .panel-image-destination img.panel-image-preview {
-  width: 30vw;
+  width: 250px;
   border-radius: 4px 4px 0px 0px;
-  height: 200px;  
+  height: 150px;  
 }
 
 .panel-image-origin img.panel-image-preview {
-  width: 25vw;
+  width: 250px;
   border-radius: 4px 4px 0px 0px;
   height: 150px;  
 }
